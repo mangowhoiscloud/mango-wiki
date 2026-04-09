@@ -1,3 +1,38 @@
+# mango-wiki
+
+> Forked from [Ar9av/obsidian-wiki](https://github.com/Ar9av/obsidian-wiki) — Karpathy의 [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) 패턴을 가장 충실하게 구현한 오픈소스 프레임워크
+
+## Fork 목적
+
+GEODE(범용 자율 실행 에이전트)와 Kiki(Slack 업무 프로파일링) 프로젝트의 개발 과정에서 축적된 지식을 영속적으로 관리하기 위한 개인 knowledge base.
+
+| 항목 | 값 |
+|------|-----|
+| Vault 경로 | `./vault/` (엔진 + 데이터 통합 구조) |
+| Pages | 223+ (concepts, references, blog, entities) |
+| Blog Posts | 146 (전문 포함, 개별 Graph View 노드) |
+| 소스 프로젝트 | [GEODE](https://github.com/mangowhoiscloud/geode), Kiki |
+| 엔진 | upstream 원본 13 skills 그대로 유지 |
+
+### upstream 원본과의 차이
+
+- `vault/` 디렉토리에 실제 wiki 데이터 포함 (원본은 엔진만 제공)
+- `.env`에서 `OBSIDIAN_VAULT_PATH=./vault` 설정 (엔진 + 데이터 통합)
+- 향후 커스텀 스킬 (`geode-sync`, `kiki-sync`) 추가 예정
+
+### upstream 동기화
+
+```bash
+git fetch upstream
+git merge upstream/main
+```
+
+---
+
+*아래는 upstream 원본 README입니다.*
+
+---
+
 # obsidian-wiki
 
 A knowledge mgmt system inspired by [gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) published by Andrej Karpathy about maintaining a personal knowledge base with LLMs : the "LLM Wiki" pattern.
