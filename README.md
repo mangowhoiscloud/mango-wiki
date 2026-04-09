@@ -165,7 +165,9 @@ A `.manifest.json` tracks every source that's been ingested — path, timestamps
 
 - **Multimodal sources.** Screenshots, whiteboard photos, slide captures, and diagrams ingest the same way as text — the agent transcribes any visible text verbatim and tags interpreted content as inferred. Requires a vision-capable model.
 
-- **Wiki insights.** Beyond delta tracking, `wiki-status` can analyze the shape of your vault itself: top hubs (anchor pages), 2-hop paths between unrelated topics (cross-domain bridges), and dead-end pages near anchor pages that should be cross-linked. Output goes to `_insights.md` at the vault root.
+- **Wiki insights.** Beyond delta tracking, `wiki-status` can analyze the shape of your vault itself: top hubs, bridge pages (nodes whose removal would partition the graph), tag cluster cohesion scores, scored surprising connections, a graph delta since last run, and suggested questions the wiki structure is uniquely positioned to answer. Output goes to `_insights.md`.
+
+- **Graph export.** `wiki-export` turns the vault's wikilink graph into `graph.json` (queryable), `graph.graphml` (Gephi/yEd), `cypher.txt` (Neo4j), and a self-contained `graph.html` interactive browser visualization — no server required.
 
 - **Tiered retrieval.** `wiki-query` reads titles, tags, and page summaries first and only opens page bodies when the cheap pass can't answer. Say "quick answer" or "just scan" to force index-only mode. Keeps query cost roughly flat as your vault grows from 20 pages to 2000.
 
@@ -224,6 +226,7 @@ Everything lives in `.skills/`. Each skill is a markdown file the agent reads wh
 | `tag-taxonomy`          | Enforce consistent tag vocabulary across pages    | `/tag-taxonomy`          |
 | `llm-wiki`              | The core pattern and architecture reference       | `/llm-wiki`              |
 | `wiki-update`           | Sync current project's knowledge into the vault   | `/wiki-update`           |
+| `wiki-export`           | Export vault graph to JSON, GraphML, Neo4j, HTML  | `/wiki-export`           |
 | `skill-creator`         | Create new skills                                 | `/skill-creator`         |
 
 > **Note:** Slash commands (`/skill-name`) work in Claude Code, Cursor, and Windsurf. In other agents, just describe what you want and the agent will find the right skill.
@@ -245,6 +248,7 @@ obsidian-wiki/
 │   ├── tag-taxonomy/SKILL.md
 │   ├── wiki-update/SKILL.md
 │   ├── llm-wiki/SKILL.md
+│   ├── wiki-export/SKILL.md
 │   └── skill-creator/SKILL.md
 │
 ├── CLAUDE.md                         # Bootstrap → Claude Code
