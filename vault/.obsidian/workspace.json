@@ -1,0 +1,214 @@
+{
+  "main": {
+    "id": "ff8f387b10f4037e",
+    "type": "split",
+    "children": [
+      {
+        "id": "597c027ca9cbcf7b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e6ce1bba04086e8b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "projects/geode/references/blog-legacy.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "blog-legacy"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "758b6eec327d6050",
+    "type": "split",
+    "children": [
+      {
+        "id": "dde4361f0f235c75",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7bef0ec83aa3d94e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "cf9875f394abcb23",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9aef35daf33e0e3e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "23d62037fcf68c5e",
+    "type": "split",
+    "children": [
+      {
+        "id": "acba378678cf785a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4ca128adb24e406b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "projects/geode/references/blog-legacy.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for blog-legacy"
+            }
+          },
+          {
+            "id": "a68cec250790e5a5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "projects/geode/references/blog-legacy.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from blog-legacy"
+            }
+          },
+          {
+            "id": "4d9dbaf3c3419a4c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "530e98d1bd71d6a6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "projects/geode/references/blog-legacy.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of blog-legacy"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "e6ce1bba04086e8b",
+  "lastOpenFiles": [
+    "projects/geode/references/hook-claude-code-comparison.md",
+    "projects/geode/concepts/geode-hook-production-gap.md",
+    "CLAUDE.md",
+    "projects/geode/references/blog-llm-resilience.md",
+    "projects/geode/references/blog-hub.md",
+    "projects/geode/references/blog-internal.md",
+    "projects/geode/references/blog-architecture.md",
+    "projects/geode/references/blog-memory-context.md",
+    "projects/geode/references/blog/general-assistant-transformation.md",
+    "projects/geode/references/blog-research.md",
+    "projects/geode/references/blog/paperclip-ai-agent-orchestration.md",
+    "projects/geode/concepts/geode-architecture.md",
+    "projects/kiki/kiki.md",
+    "projects/kiki/kiki-team-hub.md",
+    "projects/kiki/entities/po-agent.md",
+    "projects/geode/concepts/geode-agentic-loop.md",
+    "projects/geode/geode.md",
+    "projects/geode/references/blog/80-dependency-map-layer-violations-lazy-init.md",
+    "raw/geode-portfolio/geode/~$GEODE-Portfolio.pptx",
+    "raw/geode-portfolio/geode/~$GEODE-Portfolio-v10-fixed.pptx",
+    "raw/geode-portfolio/geode/~$GEODE-Appendix-Context-Checkpoint.pptx",
+    "raw/geode-portfolio/geode/slides-extra/s06-context-overflow.html",
+    "raw/geode-portfolio/geode/slides-extra/s05-tool-offloading.html",
+    "raw/geode-portfolio/geode/slides-extra/s04-refactor.html",
+    "raw/geode-portfolio/geode/slides-extra/s03-checkpoint-dag.html",
+    "raw/geode-portfolio/geode/GEODE-Appendix-Context-Checkpoint.pptx",
+    "raw/geode-portfolio/geode/slides-extra/s02-checkpoint.html",
+    "raw/geode-portfolio/geode/slides-extra/s01-context-tiers.html",
+    "projects/geode/references/blog/57-policychain-6layer-access-control.md",
+    "projects/geode/concepts/geode-computer-use.md",
+    "projects/geode/concepts/geode-tool-system.md",
+    "projects/geode/concepts/geode-gateway.md",
+    "projects/geode/references/portfolio-geode.md",
+    "journal/2026-04-07.md",
+    "projects/geode/references/blog-tools-mcp.md",
+    "projects/geode/references/blog/51-mcp-parallel-startup-singleton-optimization.md",
+    "raw/geode-portfolio/geode/versions/v9/slides/assets/v028-diagram-policy-chain.png",
+    "raw/geode-portfolio/geode/versions/v9/slides/assets/v028-diagram-pipeline-dag.png",
+    "raw/geode-portfolio/geode/versions/v9/slides/assets/v028-diagram-agentic-loop.png",
+    "raw/geode-portfolio/geode/versions/v9/slides/assets/v028-diagram-3tier.png",
+    "raw/geode-portfolio/geode/versions/v9/slides/assets/mascot.png",
+    "raw/geode-portfolio/geode/versions/v9/slides/assets/bg-cover.png",
+    "raw/geode-portfolio/geode/versions/v4/slides/assets/v028-diagram-policy-chain.png",
+    "raw/geode-portfolio/geode/versions/v4/slides/assets/v028-diagram-pipeline-dag.png",
+    "raw/geode-portfolio/geode/versions/v4/slides/assets/v028-diagram-agentic-loop.png",
+    "raw/geode-portfolio/geode/versions/v4/slides/assets/v028-diagram-3tier.png"
+  ]
+}

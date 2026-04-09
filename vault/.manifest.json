@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "lastIngest": "2026-04-09T13:52:00Z",
+  "stats": {
+    "total_sources_ingested": 9,
+    "total_pages": 71
+  },
+  "sources": {
+    "geode/GEODE.md": {
+      "ingested_at": "2026-04-07T11:00:00Z",
+      "source_type": "document",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/concepts/geode-architecture.md",
+        "projects/geode/concepts/geode-agentic-loop.md",
+        "projects/geode/concepts/geode-tool-system.md",
+        "projects/geode/concepts/geode-memory-system.md",
+        "projects/geode/concepts/geode-gateway.md",
+        "projects/geode/concepts/geode-domain-plugin.md",
+        "projects/geode/concepts/geode-llm-models.md",
+        "projects/geode/concepts/geode-tool-routing.md",
+        "projects/geode/concepts/geode-quality-evaluation.md"
+      ],
+      "raw_path": "raw/geode-docs/GEODE.md",
+      "pages_updated": [
+        "projects/geode/concepts/geode-architecture.md",
+        "projects/geode/concepts/geode-domain-plugin.md",
+        "projects/geode/geode.md"
+      ]
+    },
+    "blog/posts/*": {
+      "ingested_at": "2026-04-07T11:00:00Z",
+      "source_type": "directory",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/references/blog-architecture.md",
+        "projects/geode/references/blog-tools-mcp.md",
+        "projects/geode/references/blog-memory-context.md",
+        "projects/geode/references/blog-harness-frontier.md",
+        "projects/geode/references/blog-orchestration.md",
+        "projects/geode/references/blog-safety.md",
+        "projects/geode/references/blog-technical.md",
+        "projects/geode/references/blog-llm-resilience.md",
+        "projects/geode/references/blog-narrative.md",
+        "projects/geode/references/blog-reode.md",
+        "projects/geode/references/blog-release.md",
+        "projects/geode/references/blog-research.md",
+        "projects/geode/references/blog-internal.md",
+        "projects/geode/references/blog-legacy.md",
+        "projects/geode/references/blog-logs.md"
+      ],
+      "raw_path": "raw/geode-blog/posts"
+    },
+    "resume/*": {
+      "ingested_at": "2026-04-07T11:00:00Z",
+      "source_type": "directory",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/references/resume-targets.md"
+      ],
+      "raw_path": "raw/geode-resume/"
+    },
+    "portfolio/geode/*": {
+      "ingested_at": "2026-04-07T11:00:00Z",
+      "source_type": "directory",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/references/portfolio-geode.md"
+      ],
+      "raw_path": "raw/geode-portfolio/geode"
+    },
+    "resume/nexon/ai-live/*": {
+      "ingested_at": "2026-04-07T11:00:00Z",
+      "source_type": "directory",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/references/nexon-ai-live.md"
+      ]
+    },
+    "claude-code/*": {
+      "ingested_at": "2026-04-07T11:00:00Z",
+      "source_type": "directory",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/references/geode-claude-code-patterns.md"
+      ]
+    },
+    "openclaw/*": {
+      "ingested_at": "2026-04-07T11:00:00Z",
+      "source_type": "directory",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/references/geode-openclaw-patterns.md"
+      ]
+    },
+    "hook-system-comparison": {
+      "ingested_at": "2026-04-09T13:52:00Z",
+      "source_type": "analysis",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/concepts/geode-hook-production-gap.md",
+        "projects/geode/references/hook-claude-code-comparison.md"
+      ],
+      "pages_updated": [
+        "projects/geode/concepts/geode-architecture.md",
+        "projects/geode/references/geode-claude-code-patterns.md"
+      ],
+      "raw_path": "claude-code/utils/hooks.ts, geode/core/hooks/system.py"
+    }
+  }
+}

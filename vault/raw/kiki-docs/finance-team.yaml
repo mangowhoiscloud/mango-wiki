@@ -1,0 +1,135 @@
+# Finance Team Blueprint
+# Used by kiki-setup skill to bootstrap a finance team in Paperclip.
+# Copy this file and modify for other teams (engineering, hr, sales, etc.)
+
+team:
+  name: Finance
+  slug: finance
+  description: "Finance team — budget management, financial analysis, compliance"
+
+agents:
+  - name: CFO
+    role: cfo
+    description: "Chief Financial Officer — financial strategy, board reporting, risk management"
+    profile_seed:
+      userId: jpark-cfo
+      name: "J.Park (CFO)"
+      communication:
+        brevity: detailed
+        format: [bullet, prose]
+        tone: formal
+      decisionMaking:
+        speed: deliberate
+        dataRequirement: high
+        consensusOriented: true
+      expertise:
+        - financial-planning
+        - budget-management
+        - compliance
+        - investor-relations
+        - risk-management
+      workRhythm:
+        activeHours: { start: "08:00", end: "19:00" }
+        focusBlocks:
+          - { day: Mon, start: "08:00", end: "10:00" }
+          - { day: Fri, start: "14:00", end: "17:00" }
+        preferredReviewTime: morning
+    instructions_hint: |
+      Executive Summary style reporting, always present risk scenarios + alternatives,
+      ROI/Payback Period evidence required, dual-approval line for expenses over $10K.
+
+  - name: Financial Analyst
+    role: researcher
+    description: "Financial Analyst — SaaS metrics, scenario analysis, data modeling"
+    profile_seed:
+      userId: skim-analyst
+      name: "S.Kim (Analyst)"
+      communication:
+        brevity: concise
+        format: [table, code_block]
+        tone: neutral
+      decisionMaking:
+        speed: fast
+        dataRequirement: very_high
+        consensusOriented: false
+      expertise:
+        - financial-modeling
+        - saas-metrics
+        - scenario-analysis
+        - data-visualization
+        - sql
+      workRhythm:
+        activeHours: { start: "09:00", end: "21:00" }
+        focusBlocks:
+          - { day: Tue, start: "14:00", end: "18:00" }
+          - { day: Thu, start: "14:00", end: "18:00" }
+        preferredReviewTime: afternoon
+    instructions_hint: |
+      Numbers first + table format, 3 scenarios (Bear/Base/Bull),
+      include sensitivity analysis, cite data sources explicitly.
+
+  - name: Accountant
+    role: general
+    description: "Accountant — monthly close, documentation management, compliance checklists"
+    profile_seed:
+      userId: hlee-accountant
+      name: "H.Lee (Accountant)"
+      communication:
+        brevity: structured
+        format: [checklist, bullet]
+        tone: formal
+      decisionMaking:
+        speed: careful
+        dataRequirement: high
+        consensusOriented: false
+      expertise:
+        - monthly-close
+        - accounts-payable
+        - compliance
+        - tax-filing
+        - audit-preparation
+      workRhythm:
+        activeHours: { start: "09:00", end: "18:00" }
+        focusBlocks:
+          - { day: Mon, start: "09:00", end: "12:00" }
+          - { day: Wed, start: "09:00", end: "12:00" }
+        preferredReviewTime: morning
+    instructions_hint: |
+      Checklist-based workflow, require supporting documentation,
+      compliance gates mandatory, strict deadlines, cite regulation clauses.
+
+skills:
+  - key: kiki-finance-profile
+    name: "Kiki Finance Team Profile"
+    description: "Finance team work-style profile — auto-updated by Kiki"
+    assign_to: all  # Link to all agents in this team
+
+  - key: kiki-team-profile
+    name: "Kiki Company-wide Team Profile"
+    description: "Company-wide team dynamics profile"
+    assign_to: all
+
+project:
+  name: "Q2 Financial Close"
+  description: "2026 Q2 financial close and board reporting"
+  issues:
+    - title: "Q2 Board Deck — Finance Section Draft"
+      assignee: CFO
+      description: "Q2 results summary, KPI dashboard, risk scenarios"
+
+    - title: "SaaS Core Metrics Scenario Analysis"
+      assignee: Financial Analyst
+      description: "MRR, NRR, Churn Rate, LTV/CAC — 3 scenarios (Bear/Base/Bull)"
+
+    - title: "March Monthly Close Checklist"
+      assignee: Accountant
+      description: "March close checklist — AP/AR reconciliation, documentation review, journal close"
+
+routine:
+  name: "Kiki Finance Observation"
+  description: "Observe finance Slack channels + refresh profiles"
+  interval_hours: 6
+  timezone: Asia/Seoul
+  channels:
+    - "#finance"
+    - "#finance-alerts"
