@@ -26,6 +26,8 @@ Location: `blog/posts/technical/`
 - [[thin-only-troubleshooting-sys-executable]] — Thin-Only 트러블슈팅 — sys.executable 불일치 + serve-side UI 누출
 - [[unix-socket-ipc-cli-agents]] — Unix Domain Socket으로 CLI 에이전트 IPC 구현하기
 
+- [[81-slack-poller-deferred-ts-doctor-diagnostic]] — Slack 메시지가 씹히는 이유 — Deferred-TS 패턴과 Doctor 진단 도구
+
 ## Related
 
 - [[geode-gateway]]
