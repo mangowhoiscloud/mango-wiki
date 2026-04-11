@@ -13,14 +13,17 @@
 - 3-Provider Resilience (Anthropic/OpenAI/ZhipuAI), 5-Layer Verification
 - v0.47.1, 214 modules, 3749+ tests, 146 tech blog posts
 
-**[Kiki](https://github.com/mangowhoiscloud/kiki)** — Slack 행동 관측 → AI 에이전트 최적화 시스템 (TypeScript, Paperclip)
-- Slack 채널 관측 → 행동 시그널 추출 (원문 미수집, 시그널만 추출)
-- 유저 프로필 생성 (커뮤니케이션 스타일, 의사결정 패턴, 전문성, 업무 리듬)
-- 프로필 → Paperclip 에이전트 디렉티브 자동 생성 (Company Skills + Instructions)
-- 12 에이전트 (Finance 3 + Engineering 9), 근태관리 18모듈 도메인
-- Hub-Spoke 팀 구조: CTO(라우터) → PO/Planner(스펙) → Lead/Dev/QA(실행) dual squad
-- Delta tracking, confidence scoring, temporal decay, 5-point health check
-- v0.1.0, 18,880 LOC, 88 commits
+**[Kiki](https://github.com/mangowhoiscloud/kiki)** — Slack 행동 관측 → Paperclip AI 에이전트 최적화 시스템 (TypeScript)
+- **Slack → Profile**: 채널 행동 시그널 추출 (원문 미수집) → 유저 프로필 자동 생성 (커뮤니케이션, 의사결정, 전문성, 업무 리듬)
+- **Profile → Directive**: Paperclip Company Skills + Instructions 자동 생성, 에이전트 시스템 프롬프트에 주입
+- **12 에이전트**: Finance 3 (CFO, Analyst, Accountant) + Engineering 9 (CTO, PO, Planner, Designer, Lead x2, Dev x2, QA x2)
+- **Hub-Spoke 팀**: CTO(라우터) → PO/Planner(스펙) → Lead/Dev/QA(실행) dual squad, 근태관리 18모듈 도메인
+- **24 Event Handlers**: Scorecard 품질 게이트 (C8-C10), QA→PO/Lead→QA 자동 라우팅 (C17, C19), 역할 기반 로드 밸런싱 (C18), 에러 자동 복구 (C14)
+- **Slack Intent Commands**: `@Kiki status/pipeline/observe/refresh/profile/create issue/wake/help` — 9개 커맨드
+- **Agent Monitor Dashboard**: v0.3.0 Jira 스타일 칸반 + 타임라인 swim lane + dark/light mode
+- **Pipeline Notifier**: 이슈 라이프사이클 실시간 Slack 브로드캐스트
+- **Circuit Breaker**: 에이전트별 + 전사적 장애 차단, 자동 복구
+- **16 Skills**, 60 PRs, 41 TS modules, 14 user profiles
 
 ### Vault 현황
 
