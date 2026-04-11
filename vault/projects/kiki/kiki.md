@@ -1,83 +1,68 @@
 ---
-title: Kiki
-category: project
-tags: [kiki, paperclip, attendance, profiler, ai-agents]
-source_path: /Users/mango/workspace/kiki
-created: 2026-04-01
-updated: 2026-04-07
-sources:
-  - "kiki/memory/"
-  - "kiki/docs/"
+title: Kiki — Slack Behavioral Profiling → Paperclip Agent Optimization
+type: project
+tags: [kiki, paperclip, slack, profiling, agent-orchestration]
+created: 2026-04-11T00:00:00Z
+updated: 2026-04-11T00:00:00Z
 ---
 
 # Kiki
 
-Slack observation-based user work-style profiling → Paperclip agent optimization consultant. Manages a legacy attendance management (근태관리) system with a 12-agent AI team.
+Slack 행동 관측 기반 AI 에이전트 최적화 시스템. 유저의 커뮤니케이션 스타일, 의사결정 패턴, 전문성, 업무 리듬을 관측하고, Paperclip 에이전트 디렉티브로 자동 변환합니다.
 
-## Hubs
+## Core Pipeline
 
-- [[kiki-team-hub]] — 에이전트 12명 + Finance 3명 중앙 인덱스
-- [[kiki-domain-hub]] — 18개 모듈 → 4개 도메인 그룹 지도
-- [[kiki-pipeline-hub]] — Slack → Profile → Directive → Obsidian 파이프라인
+```
+Slack Channel Observation
+  → Behavioral Signal Extraction (원문 미수집, 시그널만)
+    → Profile Merge (confidence scoring + temporal decay)
+      → Directive Generation (profileToDirectives)
+        → Paperclip Company Skills API PATCH
+          → Agent System Prompt Injection
+```
+
+## Key Numbers
+
+| Metric | Value |
+|--------|-------|
+| Agents | 12 (Finance 3 + Engineering 9) |
+| PRs merged | 60 |
+| TS modules | 46 (12,623 LOC) |
+| Event handlers | 24 (C1-C21 guardrails) |
+| Skills | 16 |
+| Slack commands | 9 intent types |
+| Dashboard | v0.3.0 (Jira-style kanban) |
+| Commits | 184 |
 
 ## Architecture
 
 ```
-Slack → Kiki Observe → Profiles → Paperclip Plugin → Agent Directives
-                                        ↓
-                              Team Template (YAML)
-                                        ↓
-                              Paperclip Agents (12)
+SLACK (MCP) → Signal Store → Profile Merge → Directive Gen → Paperclip API → Agent
+     ↑                                                              |
+     └──────── Feedback Loop (issue.comment → profile correction) ──┘
 ```
 
-## Team Structure (v3)
+## Concepts
 
-```
-CEO
-└── CTO (router)
-    ├── PO → Planner + Designer
-    ├── Lead 1 → Developer 1 + QA 1
-    └── Lead 2 → Developer 2 + QA 2
-+ Kiki (profiler)
-```
-
-See [[engineering-team]] for details.
-
-## Key Concepts
-
-- [[engineering-team]] — v3: PO-driven dual dev squads (FIFO)
-- [[attendance-domain]] — 18-module domain map with labor law rules
-- [[finance-team]] — Finance team scenario validation
-- [[hub-spoke-pattern]] — Central coordinator + specialists
-- [[budget-tiers]] — S/M/L/XL token budget classification
-- [[paperclip-integration]] — Kiki ↔ Paperclip architecture
-
-## Key Entities
-
-- [[cto-agent]] · [[po-agent]] · [[planner-agent]] · [[designer-agent]]
-- [[lead-1]] · [[developer-1]] · [[qa-1]]
-- [[lead-2]] · [[developer-2]] · [[qa-2]]
-- [[jpark-cfo]] · [[skim-analyst]] · [[hlee-accountant]]
-
-## Cross-Project
-
-- [[mango]] — Project lead (also leads [[geode]])
-
-## Skills
-
-| Skill | Purpose |
-|-------|---------|
-| /kiki-setup | Bootstrap team from template |
-| /kiki-observe | Slack → behavioral signal extraction |
-| /kiki-refresh | Profile update + health check |
-| /kiki-advise | Profile → agent directives |
-| /kiki-export | Memory → Obsidian vault |
+- [[kiki-profile-pipeline]] — Slack → Profile → Directive 전체 파이프라인
+- [[kiki-confidence-scoring]] — 신뢰도 점수 + temporal decay + 5가지 컨텍스트 모드
+- [[kiki-circuit-breaker]] — Per-agent + company-wide 장애 차단 패턴
+- [[kiki-scorecard-guards]] — C1-C21 워크플로우 가드레일 + Lead/PO 품질 게이트
+- [[kiki-slack-integration]] — Intent commands, Pipeline notifier, Agent router
+- [[kiki-team-bootstrap]] — YAML 템플릿 → 런타임 에이전트 구성
+- [[kiki-feedback-loop]] — 이슈 코멘트 → 프로필 보정 양방향 학습
+- [[hub-spoke-pattern]] — CTO(라우터) → PO/Planner(스펙) → Lead/Dev/QA(실행)
+- [[engineering-team]] — 9 에이전트 dual squad 구조
+- [[finance-team]] — CFO, Analyst, Accountant 3인 구조
+- [[attendance-domain]] — 근태관리 18모듈 도메인
 
 ## References
 
-- [[kiki-project-progress]] — Milestones and progress board
+- [[kiki-decision-log]] — 아키텍처 의사결정 기록
+- [[kiki-project-progress]] — 칸반 + 마일스톤
 
 ## Related
 
-- [[index]]
-- [[kiki-team-hub]]
+- [[geode]] — GEODE와 동일한 anti-deception, grounding, temporal tracking 철학
+- [[mango]] — Project lead
+- [[blog-hub]]

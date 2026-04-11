@@ -32,6 +32,13 @@ title: Wiki Index
 - [[geode-hook-production-gap]] — Hook system production GAP analysis (49 events, P0-P3 gaps)
 
 ### Kiki
+- [[kiki-profile-pipeline]] — Slack → Profile → Directive 5-stage pipeline
+- [[kiki-confidence-scoring]] — Confidence scoring + temporal decay + 5 context modes
+- [[kiki-circuit-breaker]] — Per-agent + company-wide fault tolerance
+- [[kiki-scorecard-guards]] — C1-C21 guardrails + Lead/PO scorecard gates
+- [[kiki-slack-integration]] — 9 intent commands + pipeline notifier + agent router
+- [[kiki-team-bootstrap]] — YAML template → runtime agent configuration
+- [[kiki-feedback-loop]] — Issue comment → profile correction (bidirectional)
 - [[engineering-team]] — v3: 12-agent PO-driven team (FIFO dual squads)
 - [[attendance-domain]] — 18-module domain map with labor law rules
 - [[finance-team]] — 3-person finance team structure
