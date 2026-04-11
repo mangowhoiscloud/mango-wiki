@@ -4,14 +4,31 @@
 
 ## Fork 목적
 
-GEODE(범용 자율 실행 에이전트)와 Kiki(Slack 업무 프로파일링) 프로젝트의 개발 과정에서 축적된 지식을 영속적으로 관리하기 위한 개인 knowledge base.
+두 AI 에이전트 시스템의 개발 과정에서 축적된 지식을 영속적으로 관리하기 위한 개인 knowledge base.
+
+### 소스 프로젝트
+
+**[GEODE](https://github.com/mangowhoiscloud/geode)** — 범용 자율 실행 에이전트 하네스 (Python, LangGraph)
+- `while(tool_use)` AgenticLoop, 56 Tools + 44 MCP, 49 Hook Events
+- 3-Provider Resilience (Anthropic/OpenAI/ZhipuAI), 5-Layer Verification
+- v0.47.1, 214 modules, 3749+ tests, 146 tech blog posts
+
+**[Kiki](https://github.com/mangowhoiscloud/kiki)** — Slack 행동 관측 → AI 에이전트 최적화 시스템 (TypeScript, Paperclip)
+- Slack 채널 관측 → 행동 시그널 추출 (원문 미수집, 시그널만 추출)
+- 유저 프로필 생성 (커뮤니케이션 스타일, 의사결정 패턴, 전문성, 업무 리듬)
+- 프로필 → Paperclip 에이전트 디렉티브 자동 생성 (Company Skills + Instructions)
+- 12 에이전트 (Finance 3 + Engineering 9), 근태관리 18모듈 도메인
+- Hub-Spoke 팀 구조: CTO(라우터) → PO/Planner(스펙) → Lead/Dev/QA(실행) dual squad
+- Delta tracking, confidence scoring, temporal decay, 5-point health check
+- v0.1.0, 18,880 LOC, 88 commits
+
+### Vault 현황
 
 | 항목 | 값 |
 |------|-----|
 | Vault 경로 | `./vault/` (엔진 + 데이터 통합 구조) |
 | Pages | 223+ (concepts, references, blog, entities) |
 | Blog Posts | 146 (전문 포함, 개별 Graph View 노드) |
-| 소스 프로젝트 | [GEODE](https://github.com/mangowhoiscloud/geode), Kiki |
 | 엔진 | upstream 원본 13 skills 그대로 유지 |
 
 ### upstream 원본과의 차이
