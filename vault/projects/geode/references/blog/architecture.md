@@ -9,9 +9,9 @@ created: 2026-04-08T00:00:00Z
 
 # GEODE Architecture
 
-> [README](../README.md) | **Architecture** | [Workflow](workflow.md) | [Setup](setup.md)
+> README | **Architecture** | Workflow | Setup
 
-이 문서는 **GEODE Runtime(에이전트)** 의 내부 아키텍처를 다룹니다. 생산 체계(Scaffold)는 [Workflow](workflow.md)를 참고하세요.
+이 문서는 **GEODE Runtime(에이전트)** 의 내부 아키텍처를 다룹니다. 생산 체계(Scaffold)는 Workflow를 참고하세요.
 
 - **Scaffold (생산)**: Claude Code + CLAUDE.md + 개발 Skills + CI Hooks → GEODE를 만드는 외부 하네스
 - **Runtime (에이전트)**: 아래 6-Layer 구조 — 47 Tools · 20 Runtime Skills · 36 Runtime Hooks · 5-Layer Verification

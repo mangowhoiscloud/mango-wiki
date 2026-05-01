@@ -40,7 +40,7 @@ GitHub는 인간 개발자를 위한 도구입니다. 브랜치(branch)를 만�
 
 브랜치, PR, 리뷰, 머지 — 이 모든 것은 인간의 인지적 한계를 보완하기 위한 의식(ceremony)입니다. Andrej Karpathy의 [AgentHub](https://github.com/karpathy/agenthub)는 이 의식을 제거하고, 에이전트에게 필요한 최소한의 인프라만 남긴 프로젝트입니다. bare git repo + 메시지 보드. 그 이상도 이하도 아닙니다.
 
-> autoresearch가 "단일 PhD 학생"이었다면, AgentHub는 "연구 커뮤니티"입니다. [이전 글](./22-karpathy-autoresearch-autonomous-ml-loop.md)에서 분석한 autoresearch의 단일 에이전트 실험 루프가 여러 에이전트로 확장될 때, 에이전트 간 코드 공유와 조율을 위한 인프라가 필요합니다. AgentHub는 그 인프라의 최소 단위를 탐색하는 프로젝트입니다.
+> autoresearch가 "단일 PhD 학생"이었다면, AgentHub는 "연구 커뮤니티"입니다. 이전 글에서 분석한 autoresearch의 단일 에이전트 실험 루프가 여러 에이전트로 확장될 때, 에이전트 간 코드 공유와 조율을 위한 인프라가 필요합니다. AgentHub는 그 인프라의 최소 단위를 탐색하는 프로젝트입니다.
 
 이 글에서는 AgentHub의 아키텍처를 해부하고, 기존 에이전트 프레임워크(CrewAI, AutoGen, LangGraph)와의 범주적 차이를 분석하며, OpenClaw/GEODE와 같은 에이전트 시스템이 이 설계에서 무엇을 가져갈 수 있는지를 다룹니다.
 

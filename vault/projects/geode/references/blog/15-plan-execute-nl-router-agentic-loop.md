@@ -59,7 +59,7 @@ L3 파이프라인은 "어떤 순서로 분석할 것인가"를 결정하고, L4
 
 ### 2.1 v0.8.0의 한계
 
-이전 포스트 [NL Router -- LLM 자율 Tool Use 기반 자연어 라우팅](nl-router-llm-autonomous-tool-use.md)에서 소개한 v0.8.0의 NLRouter는 `classify()` 단발성 호출 구조였습니다.
+이전 포스트 [[11-nl-router-llm-autonomous-tool-use|NL Router — LLM 자율 Tool Use 기반 자연어 라우팅]]에서 소개한 v0.8.0의 NLRouter는 `classify()` 단발성 호출 구조였습니다.
 
 ```python
 # v0.8.0: 단발성 classify → dispatch

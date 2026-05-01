@@ -223,7 +223,7 @@ export function GraphView({ graph }: { graph: Graph }) {
                 opacity={dim ? 0.15 : 1}
                 style={{ cursor: "pointer" }}
               >
-                <Link href={`/wiki/${n.id}`}>
+                <Link href={n.id === "index" ? "/" : `/wiki/${n.id}`}>
                   <circle
                     r={r}
                     fill={colorFor(n)}

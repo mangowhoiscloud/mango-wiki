@@ -9,7 +9,7 @@ created: 2026-04-08T00:00:00Z
 
 # TurboQuant CS Fundamentals Appendix
 
-> Companion to [turboquant-kv-cache-compression.md](./turboquant-kv-cache-compression.md)
+> Companion to [[turboquant-kv-cache-compression]]
 > Date: 2026-03-29 | Purpose: CS fundamentals underlying Google TurboQuant (ICLR 2026)
 
 ---

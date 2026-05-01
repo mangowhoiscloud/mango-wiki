@@ -48,7 +48,7 @@ geode (thin CLI B) ──── Unix socket ────┘     ├── Thread
 
 문제는 여기서 발생합니다. 두 클라이언트가 동시에 접속한 상태에서, **Session A의 도구 호출 결과가 Session B의 터미널에 출력**되는 현상이 관측되었습니다. Resume 작업의 출력이 전혀 관련 없는 리서치 세션으로 흘러들어오는 것이 직접 확인된 P0 버그입니다. 분산 스토리지로 비유하면 Client A의 read response가 Client B의 소켓으로 전달된 것과 같습니다.
 
-[PolicyChain 6-Layer 포스트](57-policychain-6layer-access-control.md)에서 도구 **실행 권한**의 격리를 다뤘다면, 이번 포스트에서는 도구 **출력 경로**의 격리를 다룹니다.
+[[57-policychain-6layer-access-control|PolicyChain 6-Layer 포스트]]에서 도구 **실행 권한**의 격리를 다뤘다면, 이번 포스트에서는 도구 **출력 경로**의 격리를 다룹니다.
 
 ---
 

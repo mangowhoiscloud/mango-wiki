@@ -27,7 +27,7 @@ created: 2026-04-08T00:00:00Z
 
 ## 1. 도입: 서브에이전트는 "작은 에이전트"가 아니다
 
-이전 글([#24 SubAgent 아키텍처 의사결정 저널](24-subagent-architecture-decision-journal.md))에서 GEODE의 서브에이전트 시스템이 어떻게 태어났는지를 기록했습니다. `IsolatedRunner`, `CoalescingQueue`, OpenClaw 세션 키 격리까지 — v0.10.0에서 병렬 실행 기반이 갖춰졌습니다.
+이전 글(#24 SubAgent 아키텍처 의사결정 저널)에서 GEODE의 서브에이전트 시스템이 어떻게 태어났는지를 기록했습니다. `IsolatedRunner`, `CoalescingQueue`, OpenClaw 세션 키 격리까지 — v0.10.0에서 병렬 실행 기반이 갖춰졌습니다.
 
 그런데 한 가지 근본적인 문제가 남아 있었습니다. **서브에이전트는 부모와 다른 존재였습니다.** 부모 AgenticLoop은 38개 도구, MCP 4개 서버, 스킬 시스템, 메모리, HITL 게이트를 갖춘 완전한 에이전트였지만, 서브에이전트는 `analyze`/`search`/`compare`/`report` 네 가지 함수만 호출할 수 있는 단순한 작업자였습니다.
 
@@ -61,7 +61,7 @@ AgenticLoop → delegate_task → SubAgentManager.delegate(tasks)
   → HookEvent.SUBAGENT_STARTED/COMPLETED/FAILED
 ```
 
-> v0.10.0에서 병렬 실행, 중복 제거, DAG 의존성, 훅 이벤트가 추가되었습니다. 하지만 실행 단위 자체는 여전히 단순 함수였습니다. [#24 의사결정 저널](24-subagent-architecture-decision-journal.md)에서 이 시점의 7개 분기점을 다루었습니다.
+> v0.10.0에서 병렬 실행, 중복 제거, DAG 의존성, 훅 이벤트가 추가되었습니다. 하지만 실행 단위 자체는 여전히 단순 함수였습니다. #24 의사결정 저널에서 이 시점의 7개 분기점을 다루었습니다.
 
 ### 3세대: Full AgenticLoop 상속 (v0.10.1, P2)
 
@@ -428,12 +428,12 @@ GEODE는 이미 RLM의 세 가지 구성 요소를 갖추고 있습니다.
 
 ### 참조
 
-- [#24 SubAgent 아키텍처 의사결정 저널](24-subagent-architecture-decision-journal.md)
+- #24 SubAgent 아키텍처 의사결정 저널 (별도 페이지 미존재)
 - [MIT RLM — Recursive Language Models (arXiv:2512.24601)](https://arxiv.org/abs/2512.24601)
 - [MAS Failure Taxonomy (arXiv:2503.13657)](https://arxiv.org/abs/2503.13657)
 - Claude Code Sub-Agent Issues: [#4182](https://github.com/anthropics/claude-code/issues/4182), [#19077](https://github.com/anthropics/claude-code/issues/19077), [#4850](https://github.com/anthropics/claude-code/issues/4850)
 - OpenClaw 무한 재시도 버그: [#41291](https://github.com/openclaw/openclaw/issues/41291)
-- [P2 Plan: Sub-Agent Orchestration Hardening](../plans/P2-subagent-orchestration-hardening.md)
+- P2 Plan: Sub-Agent Orchestration Hardening (계획 문서 미존재)
 
 ---
 

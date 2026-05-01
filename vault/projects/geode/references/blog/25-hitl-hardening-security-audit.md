@@ -26,7 +26,7 @@ created: 2026-04-08T00:00:00Z
 
 ## 1. 도입 — 왜 HITL을 다시 점검해야 했는가
 
-[이전 포스트](21-clarification-hitl-cost-tracking.md)에서 GEODE의 HITL Safety Gate를 소개했습니다. `SAFE` / `STANDARD` / `DANGEROUS` 3단계 분류로 도구를 나누고, `DANGEROUS`(bash)와 `EXPENSIVE`(분석) 도구에 사용자 승인을 요구하는 구조였습니다.
+이전 포스트(#21 Clarification HITL Cost Tracking, 별도 페이지 미존재)에서 GEODE의 HITL Safety Gate를 소개했습니다. `SAFE` / `STANDARD` / `DANGEROUS` 3단계 분류로 도구를 나누고, `DANGEROUS`(bash)와 `EXPENSIVE`(분석) 도구에 사용자 승인을 요구하는 구조였습니다.
 
 이 설계는 단일 AgenticLoop 환경에서는 충분했습니다. 그러나 v0.11.0에서 **Sub-Agent 시스템**(P2-B Full AgenticLoop Inheritance)이 도입되면서 상황이 달라졌습니다.
 

@@ -22,7 +22,7 @@ GEODE 오케스트레이션 레이어는 LangGraph `StateGraph` 위에 구축된
 
 | 하위 시스템 | 역할 | 핵심 파일 |
 |---|---|---|
-| **HookSystem** | 이벤트 기반 확장 포인트 (36개 이벤트) | `core/hooks/` → [hook-system.md](hook-system.md) |
+| **HookSystem** | 이벤트 기반 확장 포인트 (36개 이벤트) | `core/hooks/` → [[28-hook-system-event-driven-orchestration|hook-system 포스트]] |
 | **ToolSystem** | LLM-driven 도구 사용 및 정책 기반 접근 제어 | `tools/base.py`, `tools/registry.py`, `tools/policy.py` |
 | **PlanMode** | 복합 분석 요청의 plan-before-execute 패턴 | `orchestration/plan_mode.py`, `orchestration/planner.py` |
 | **BootstrapManager** | 노드 실행 전 구성 주입 (`NODE_BOOTSTRAP`) | `orchestration/bootstrap.py` |
@@ -34,7 +34,7 @@ GEODE 오케스트레이션 레이어는 LangGraph `StateGraph` 위에 구축된
 
 ## 2. HookSystem
 
-> **별도 문서로 분리됨**: [hook-system.md](hook-system.md)
+> **별도 문서로 분리됨**: [[28-hook-system-event-driven-orchestration]]
 >
 > HookSystem은 `core/hooks/`로 독립 모듈화 (cross-cutting concern). L0~L5 전 레이어에서 접근.
 > 36개 이벤트, 14+ 핸들러, 우선순위 기반 실행.

@@ -12,7 +12,7 @@ import rehypeStringify from "rehype-stringify";
 import { visit } from "unist-util-visit";
 import type { Root as MdastRoot } from "mdast";
 import type { Root as HastRoot, Element } from "hast";
-import { remarkWikilinks, type Resolver } from "./wikilinks";
+import { remarkWikilinks, remarkInlineMdLinks, type Resolver } from "./wikilinks";
 import {
   rehypeStripFirstH1,
   rehypeWrapTables,
@@ -195,6 +195,7 @@ export async function renderMarkdown(
     .use(remarkObsidianCallouts)
     .use(remarkSmartypants, { dashes: "oldschool" })
     .use(remarkWikilinks(resolve))
+    .use(remarkInlineMdLinks(resolve))
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeStripFirstH1)

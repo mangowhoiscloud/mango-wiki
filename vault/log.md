@@ -5,6 +5,26 @@ tags: [log, operations, ingest]
 
 ## Log
 
+- [2026-05-01T07:00:00Z] MIRROR source="kiki vault concepts/governance/specs/reports/plugin/synthesis/journal" pages_created=29 pages_updated=3 project="kiki" mode="kiki-vault-mirror" notes="behavioral-profiling, llm-wiki-pattern, pipeline-guardrails, review-scorecard, scaffold-app-boundary, versioned-plugin-path, karpathy-engineering-principles, karpathy-identity-principles, 6 specs, 1 report, 4 plugin jobs, 7 plugin tools, agent-governance-overview, ttree-project, observation-summary-april. Wikilinks rewritten kiki-vault-namespace → mango-wiki flat namespace. Two karpathy-principles disambiguated (engineering vs identity)."
+- [2026-05-01T06:00:00Z] INGEST source="raw/kiki-signals/{04-08, 04-08-engineering, 04-10, 04-11-null, 04-15, 04-15b} + raw/kiki-profiles/{cto_agent, dev_1/2, lead_1/2, planner, po, qa_1} + raw/kiki-teams/team_engineering" pages_created=7 pages_updated=4 project="kiki" mode="delta-backfill" notes="Filled gap 4/8-15: finance KPI day, engineering 9-agent first observation, mango general+null+slack/git fallback, kiki maturity sprint synthesis. Raw side caught up: profiles 4→12, signals 6→12, teams 1→2."
+- [2026-05-01T05:30:00Z] INGEST source="arXiv 2412.20138 TradingAgents PDF + Paperclip GitHub README/AGENTS.md + Swarm/AutoGen/CrewAI/Agent Squad 비교" pages_created=5 pages_updated=2 project="bagelcode" mode="schema-foundation" notes="Transcripts 스키마 1차 확정 (JSONL append-only, 18 kind, 5 actor) — 다른 모든 결정의 선결. 캐싱 전략 (Anthropic ephemeral + sandwich 경계 + 토큰 예산) + 루브릭 5차원 × 5점 + Karpathy P4 anti-deception 룰. Paperclip 채택 X, 자체 구현 권장 (자체 protocol 노선)."
+- [2026-05-01T04:35:00Z] INGEST source="bagelcode 신작팀 AI 개발자 채용 메일 + 블로그 2건 (DAVIS / AI-First) + 공고 208045 stub" pages_created=7 project="bagelcode" mode="recruitment-task-bootstrap" notes="공고 본문은 CSR 페이지로 미수집 (Chrome 확장 미연결). 채용 메일 + 블로그 2건 기반 팀 페르소나 + 과제 방향 합의 페이지 + Kiki/AppMaker 자산 매핑 작성"
+- [2026-04-30T11:30:00Z] INGEST source="kiki-appmaker bootstrap (KIKI.md + README + CLAUDE + 11 agents + install/sandwich + docs/PDCA + deployment + handoffs + research + superpowers)" pages_created=10 project="kiki-appmaker" mode="phase-2A-bootstrap"
+- [2026-04-30T11:30:00Z] INGEST source="kiki sync (research/* + guides/* + handoff-* + memory) + kiki.md update" pages_created=3 pages_updated=1 project="kiki" mode="phase-2B-sync"
+- [2026-04-30T11:30:00Z] INGEST source="geode v0.49→v0.64 catchup (R audit synthesis + lifecycle + experimental + plugin + ADRs + research catchup + architecture extras)" pages_created=7 project="geode" mode="phase-2C-catchup"
+- [2026-04-30T11:30:00Z] LINT pages_added=20 wikilinks_new=~150 broken=0 orphans=0 status="all green"
+- [2026-04-30T10:59:00Z] INGEST source="geode/core/llm/providers/anthropic.py,core/agent/loop.py,core/llm/agentic_response.py + Anthropic docs effort/adaptive-thinking + Hermes anthropic_adapter.py" pages_created=1 pages_updated=2 page="geode-adaptive-thinking" project="geode" mode="grounded-tech-report"
+- [2026-04-15T01:00:00Z] LINT pages_scanned=253 wikilinks=1895 broken=4 orphans=3 fixed=4
+- [2026-04-15T01:00:00Z] FIX broken_link="[[kiki-finance-team]]→[[finance-team]]" files=2
+- [2026-04-15T01:00:00Z] FIX broken_link="[[tuned-lens]]" action="created stub page" files=1
+- [2026-04-15T01:00:00Z] CROSS_LINK target="deep-thinking-ratio-reasoning-depth" inbound_added=1
+- [2026-04-15T00:30:00Z] INGEST source="raw/geode-blog/research/*" pages_created=4 pages_updated=0 mode=append project="geode"
+- [2026-04-15T00:30:00Z] INGEST source="raw/kiki-signals/04-02,04-04,04-06,04-07" pages_created=4 pages_updated=0 mode=append project="kiki"
+- [2026-04-15T00:30:00Z] INGEST source="raw/geode-docs/CHANGELOG.md" pages_created=1 pages_updated=0 mode=append project="geode"
+- [2026-04-15T00:00:00Z] INGEST source="raw/geode-docs/CLAUDE.md,README.md" pages_created=1 pages_updated=1 mode=append project="geode"
+- [2026-04-15T00:00:00Z] INGEST source="geode-unified-scaffold" pages_created=0 type="registration" project="geode"
+- [2026-04-15T00:00:00Z] INGEST source="raw/kiki-signals/*,raw/kiki-profiles/user_mango.md" pages_created=3 pages_updated=0 mode=append project="kiki"
+- [2026-04-15T00:00:00Z] INGEST source="geode/docs/research/deep-thinking-ratio-*.md" pages_created=3 pages_updated=0 project="geode" type="research" topics="DTR,overthinking,TTC-scaling"
 - [2026-04-07T11:00:00Z] INGEST source="geode/GEODE.md,CLAUDE.md,CHANGELOG.md" pages_created=12 pages_updated=0 project="geode"
 - [2026-04-07T11:00:00Z] INGEST source="blog/posts/*" pages_created=14 pages_updated=0 project="geode"
 - [2026-04-07T11:00:00Z] INGEST source="resume/*" pages_created=1 pages_updated=1 project="geode"
@@ -25,3 +45,33 @@ tags: [log, operations, ingest]
 - [2026-04-07T08:20:39Z] INGEST source="geode/CLAUDE.md" pages_created=1 category="skills"
 - [2026-04-07T08:21:40Z] INGEST created 3 hub pages: kiki-team-hub, kiki-domain-hub, kiki-pipeline-hub
 - [2026-04-09T13:52:00Z] INGEST source="claude-code/utils/hooks.ts,geode/core/hooks/system.py" pages_created=2 pages_updated=3 project="geode"
+- [2026-04-15T00:00:00Z] INGEST source="raw/geode-docs/CLAUDE.md,README.md" pages_created=1 pages_updated=1 mode=append project="geode"
+- [2026-04-15T00:00:00Z] INGEST source="geode-unified-scaffold" pages_created=0 pages_updated=0 type="registration" project="geode"
+- [2026-04-15T00:00:00Z] INGEST source="raw/kiki-signals/*,raw/kiki-profiles/user_mango.md,raw/kiki-teams/team_finance.md" pages_created=3 pages_updated=0 mode=append project="kiki"
+- [2026-04-15T00:30:00Z] INGEST source="raw/geode-blog/research/*" pages_created=4 pages_updated=0 mode=append project="geode"
+- [2026-04-15T00:30:00Z] INGEST source="raw/kiki-signals/04-02,04-04,04-06,04-07" pages_created=4 pages_updated=0 mode=append project="kiki"
+- [2026-04-15T00:30:00Z] INGEST source="raw/geode-docs/CHANGELOG.md" pages_created=1 pages_updated=0 mode=append project="geode"
+
+- [2026-04-30T12:05:00Z] DEPLOY app/mango-wiki/ live (port 4012, Next.js 15 + React 19, kiki-wiki engine fork, MANGO_DISABLE_CACHE=1 in dev, start.sh bg/stop/status/restart)
+- [2026-05-01T00:00:00Z] INGEST source="geode/core/llm/prompts/*, prompt_assembler.py, hashing tests + frontier comparison (hermes/openclaw/claude-code prompt subsystems)" pages_created=6 pages_updated=2 project="geode" mode="series-prompt-system" series=["prompt-system","prompt-templates","prompt-assembly","prompt-hashing","prompt-frontier-comparison","prompt-evolution"]
+- [2026-05-01T01:00:00Z] FIX gap_correction prompt_versions_count=20 pinned_count=20 finding="initial 18 vs 20 asymmetry was false alarm — verify_prompt_integrity() returns []" pages_updated=4 project="geode"
+- [2026-05-01T01:00:00Z] FIX cache_status finding="anthropic ephemeral cache + STATIC/DYNAMIC boundary already implemented (build_system_prompt + anthropic.py:411-433). Real GAP is messages history caching." pages_updated=2 project="geode"
+- [2026-05-01T01:30:00Z] INGEST source="geode/core/* + plugins/* subsystem catalog" pages_created=1 page="geode-system-index" project="geode" mode="docs-foundation"
+- [2026-05-01T02:00:00Z] DEPLOY portfolio/geode/docs scaffold (Next.js 16 routes, sidebar nav, 22 pages: 11 ready + 11 stub). Build pass: 35 static pages. Target URL: mangowhoiscloud.github.io/portfolio/geode/docs
+- [2026-05-01T03:35:26Z] PR_MERGED geode/PR#864 feat(llm) apply_messages_cache_control (Hermes system_and_3 parity). 4379 tests pass, CI 5/5. Merged to develop.
+- [2026-05-01T03:38:22Z] PR_MERGED geode/PR#865 develop→main release. Merged.
+- [2026-05-01T03:40:00Z] FIX system-index counts corrected (llm 15→22, hooks 7→9 incl. 7 root-level core/*.py files). 19 packages + 7 root files = 226 entries indexed.
+- [2026-05-01T03:42:00Z] AUTHOR portfolio/geode/docs content fill (11 stubs → 11 ready). All 22 pages content-complete.
+- [2026-05-01T03:50:00Z] DEPLOY portfolio/main commit 8bb5b2d → GH Pages run 25201237547 success. Live at mangowhoiscloud.github.io/portfolio/geode/docs/. 9/9 spot-checked routes 200.
+- [2026-05-01T04:00:00Z] AUDIT docs vs ground truth (post-PR #864 geode HEAD). DRIFT: tools count (56→57, 24→6), Anthropic line numbers (411-433→476-495), MCPManager file (service.py→manager.py), test count (4360+→4379), hook groups (12→14), BiasBuster verbosity threshold (r>0.7 not in code).
+- [2026-05-01T04:15:00Z] FIX docs drift in 9 pages + add 7 new subsystem pages (scheduler, automation, orchestration, auth, computer-use, domains, vault). Total docs routes 22→29.
+- [2026-05-01T04:29:00Z] FEATURE Korean i18n in /portfolio/geode/docs. LocaleProvider mounted at docs/layout, DocsShell client+toggle, sitemap bilingual, top 4 pages fully translated (index, overview, prompt-system, others Korean chrome only). Build 29 routes static.
+- [2026-05-01T04:32:00Z] DEPLOY portfolio/main commit 02ac24c → GH Pages run 25202258573 success (11s deploy). 8/8 spot-checked routes 200, Korean text rendered in HTML.
+- [2026-05-01T04:39:00Z] DEPLOY mango-wiki/main commit 243ee89 → GH Pages run 25202494527 success (build 49s + deploy 19s). Live at mangowhoiscloud.github.io/mango-wiki/. Workflow .github/workflows/deploy-pages.yml triggers on app/mango-wiki/** or vault/** changes.
+- [2026-05-01T04:55:00Z] ENRICH page="geode-llm-models" project="geode" finding="outdated v0.51 snapshot — wrong primary (opus-4-6→opus-4-7), wrong OpenAI primary (gpt-5.4→gpt-5.5), wrong GLM primary (glm-5→glm-5.1), missing OpenAI Codex provider entirely, missing Codex-only model gate, missing cross-provider failover flag, missing context-management beta headers, stale pricing." source="geode/core/config.py + core/llm/* (v0.62.0 ground truth via Explore agent)" pages_updated=1 model_count_change="9→14" provider_count_change="3→4"
+- [2026-05-01T05:00:00Z] ENRICH page="geode-oauth-policy" project="geode" finding="missing v0.54.0+ GEODE-issued OAuth path priority over Codex CLI fallback, missing Cloudflare bypass headers (User-Agent codex_cli_rs + originator), missing JWT chatgpt_account_id extraction, missing _CODEX_ONLY_MODELS gate cross-link." pages_updated=1
+- [2026-05-01T05:00:00Z] CROSS_LINK index.md one-liners refreshed for geode-llm-models (4 providers × 14 models, depth=1 fail-fast) and geode-oauth-policy (GEODE-issued > CLI fallback). pages_updated=1
+- [2026-05-01T05:30:00Z] INGEST source="resume/common/* + resume/common/narratives/*" pages_created=8 (1 hub + 4 BULLET-MAPs + 3 narratives) project="geode" mode="batch-orphan-cleanup". raw/geode-resume/common/ orphan resolved.
+- [2026-05-01T05:30:00Z] FIX changelog-summary stale (Apr 15 v0.48 → May 1 v0.64+). +Phase 6 (Reasoning Depth R1~R9) +Phase 7 (Lifecycle + Plugin Split) +Unreleased PR #864.
+- [2026-05-01T05:30:00Z] FIX index.md stale meta: tools 56→57, pinned hashes 18→20, test count 4360→4379. +9 resume entries linked under Career.
+- [2026-05-01T05:30:00Z] LINT 10 target files (8 new + changelog + index.md). 238 wikilinks, 0 broken, 0 unbalanced fences. status="all green"
