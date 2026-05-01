@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "pnpm build",
+  "installCommand": "pnpm install --frozen-lockfile=false",
+  "framework": "nextjs",
+  "outputDirectory": ".next",
+  "env": {
+    "MANGO_VAULT_DIR": "../../vault"
+  },
+  "build": {
+    "env": {
+      "MANGO_VAULT_DIR": "../../vault"
+    }
+  }
+}
