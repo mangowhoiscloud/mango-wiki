@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "lastIngest": "2026-04-09T13:52:00Z",
+  "lastIngest": "2026-05-01T10:30:00Z",
   "stats": {
-    "total_sources_ingested": 9,
-    "total_pages": 71
+    "total_sources_ingested": 30,
+    "total_pages": 169
   },
   "sources": {
     "geode/GEODE.md": {
@@ -106,6 +106,432 @@
         "projects/geode/references/geode-claude-code-patterns.md"
       ],
       "raw_path": "claude-code/utils/hooks.ts, geode/core/hooks/system.py"
+    },
+    "geode/CLAUDE.md-scaffold": {
+      "ingested_at": "2026-04-15T00:00:00Z",
+      "source_type": "document",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/concepts/geode-scaffold-production.md"
+      ],
+      "pages_updated": [
+        "projects/geode/geode.md"
+      ],
+      "raw_path": "raw/geode-docs/CLAUDE.md"
+    },
+    "geode-unified-scaffold": {
+      "ingested_at": "2026-04-15T00:00:00Z",
+      "source_type": "analysis",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/geode-unified-scaffold.md"
+      ],
+      "pages_updated": []
+    },
+    "kiki-signals-april": {
+      "ingested_at": "2026-04-15T00:00:00Z",
+      "source_type": "directory",
+      "project": "kiki",
+      "pages_created": [
+        "projects/kiki/references/kiki-finance-signals-april.md",
+        "projects/kiki/concepts/kiki-close-period-pattern.md"
+      ],
+      "pages_updated": [],
+      "raw_path": "raw/kiki-signals/"
+    },
+    "geode-dtr-research": {
+      "ingested_at": "2026-04-15T00:00:00Z",
+      "source_type": "research",
+      "project": "geode",
+      "pages_created": [
+        "concepts/deep-thinking-ratio.md",
+        "concepts/overthinking-inverse-scaling.md",
+        "concepts/test-time-compute-scaling.md"
+      ],
+      "pages_updated": [],
+      "raw_path": "geode/docs/research/deep-thinking-ratio-research.md",
+      "blog_page": "projects/geode/references/blog/deep-thinking-ratio-reasoning-depth.md"
+    },
+    "kiki-profiles-mango": {
+      "ingested_at": "2026-04-15T00:00:00Z",
+      "source_type": "document",
+      "project": "kiki",
+      "pages_created": [
+        "projects/kiki/entities/mango-user.md"
+      ],
+      "pages_updated": [],
+      "raw_path": "raw/kiki-profiles/user_mango.md",
+      "content_hash": "sha256:53df7b0451456ce60cbb4fe1519366f952d26d84c162f9f6a9d2ea0e610c6db2"
+    },
+    "geode/adaptive-thinking-tech-report": {
+      "ingested_at": "2026-04-30T10:59:00Z",
+      "source_type": "multi-source",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/concepts/geode-adaptive-thinking.md"
+      ],
+      "pages_updated": [
+        "index.md",
+        "log.md"
+      ],
+      "sources_referenced": [
+        "geode/core/llm/providers/anthropic.py",
+        "geode/core/agent/loop.py",
+        "geode/core/llm/agentic_response.py",
+        "geode/core/cli/effort_picker.py",
+        "geode/core/cli/commands.py",
+        "hermes-agent/agent/anthropic_adapter.py",
+        "platform.claude.com/docs/en/build-with-claude/effort",
+        "platform.claude.com/docs/en/build-with-claude/adaptive-thinking",
+        "rooftopsnow.tistory.com/396 (think@N)"
+      ],
+      "mode": "grounded-tech-report"
+    },
+    "kiki-appmaker/bootstrap": {
+      "ingested_at": "2026-04-30T11:30:00Z",
+      "source_type": "multi-source",
+      "project": "kiki-appmaker",
+      "pages_created": [
+        "projects/kiki-appmaker/kiki-appmaker.md",
+        "projects/kiki-appmaker/entities/kiki-appmaker-agent-roles.md",
+        "projects/kiki-appmaker/concepts/kiki-appmaker-orchestration.md",
+        "projects/kiki-appmaker/concepts/kiki-appmaker-pdca.md",
+        "projects/kiki-appmaker/concepts/kiki-appmaker-deployment.md",
+        "projects/kiki-appmaker/concepts/kiki-appmaker-pin-system.md",
+        "projects/kiki-appmaker/references/kiki-appmaker-superpowers.md",
+        "projects/kiki-appmaker/references/kiki-appmaker-research.md",
+        "projects/kiki-appmaker/references/kiki-appmaker-agent-templates.md",
+        "projects/kiki-appmaker/skills/kiki-appmaker-skills-index.md",
+        "projects/kiki-appmaker/synthesis/kiki-appmaker-handoff-retros.md"
+      ],
+      "mode": "phase-2A-bootstrap"
+    },
+    "kiki/sync-2026-04-30": {
+      "ingested_at": "2026-04-30T11:30:00Z",
+      "source_type": "multi-source",
+      "project": "kiki",
+      "pages_created": [
+        "projects/kiki/references/kiki-research-index.md",
+        "projects/kiki/skills/kiki-skills-index.md",
+        "projects/kiki/synthesis/kiki-handoff-retros.md"
+      ],
+      "pages_updated": [
+        "projects/kiki/kiki.md"
+      ],
+      "mode": "phase-2B-sync"
+    },
+    "geode/catchup-v049-v064": {
+      "ingested_at": "2026-04-30T11:30:00Z",
+      "source_type": "multi-source",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/synthesis/geode-reasoning-depth-audit.md",
+        "projects/geode/concepts/geode-lifecycle-commands.md",
+        "projects/geode/concepts/geode-experimental-namespace.md",
+        "projects/geode/concepts/geode-plugin-namespace.md",
+        "projects/geode/references/adr/geode-adr-index.md",
+        "projects/geode/references/research/geode-research-catchup.md",
+        "projects/geode/concepts/geode-architecture-extras.md"
+      ],
+      "pages_updated": [
+        "index.md",
+        "log.md"
+      ],
+      "mode": "phase-2C-catchup"
+    },
+    "mango-wiki/app-deploy": {
+      "ingested_at": "2026-04-30T12:05:00Z",
+      "source_type": "next-app",
+      "project": "mango-wiki",
+      "pages_created": [],
+      "pages_updated": [
+        "README.md",
+        "log.md"
+      ],
+      "app_path": "app/mango-wiki/",
+      "engine": "kiki-wiki fork (Next.js 15 + React 19)",
+      "port": 4012,
+      "live_reload": true,
+      "mode": "app-deploy"
+    },
+    "bagelcode/recruitment-task-2026-05": {
+      "ingested_at": "2026-05-01T04:35:00Z",
+      "source_type": "multi-source",
+      "project": "bagelcode",
+      "pages_created": [
+        "projects/bagelcode/bagelcode.md",
+        "projects/bagelcode/references/bagelcode-recruitment-task.md",
+        "projects/bagelcode/references/bagelcode-job-posting-208045.md",
+        "projects/bagelcode/references/bagelcode-davis-system.md",
+        "projects/bagelcode/references/bagelcode-ai-first-culture.md",
+        "projects/bagelcode/synthesis/bagelcode-team-profile.md",
+        "projects/bagelcode/synthesis/bagelcode-kiki-leverage.md",
+        "projects/bagelcode/synthesis/bagelcode-task-direction.md"
+      ],
+      "pages_updated": [
+        "index.md",
+        "log.md"
+      ],
+      "sources_referenced": [
+        "베이글코드 채용팀 메일 (2026-05-01)",
+        "https://career.bagelcode.com/ko/o/208045 (CSR — 본문 미수집)",
+        "https://www.bagelcode.com/article/bagelcode-x-ai-genie-기반-사내-데이터-비서-davis-개발기/",
+        "https://www.bagelcode.com/article/ai-first-wiht-bagles-에이전트를-만들다-에이전트를-위해-만들다/"
+      ],
+      "mode": "recruitment-task-bootstrap"
+    },
+    "bagelcode/schema-foundation-2026-05": {
+      "ingested_at": "2026-05-01T05:30:00Z",
+      "source_type": "multi-source",
+      "project": "bagelcode",
+      "pages_created": [
+        "projects/bagelcode/references/bagelcode-tradingagents-paper.md",
+        "projects/bagelcode/concepts/bagelcode-transcripts-schema.md",
+        "projects/bagelcode/concepts/bagelcode-caching-strategy.md",
+        "projects/bagelcode/concepts/bagelcode-rubric-scoring.md",
+        "projects/bagelcode/synthesis/bagelcode-paperclip-vs-alternatives.md"
+      ],
+      "pages_updated": [
+        "projects/bagelcode/bagelcode.md",
+        "projects/bagelcode/synthesis/bagelcode-task-direction.md",
+        "index.md",
+        "log.md"
+      ],
+      "sources_referenced": [
+        "https://arxiv.org/pdf/2412.20138 (TradingAgents v7, 2025-06-03)",
+        "https://github.com/paperclipai/paperclip",
+        "https://github.com/openai/swarm",
+        "https://github.com/microsoft/autogen",
+        "https://github.com/crewaiinc/crewai",
+        "https://github.com/2FastLabs/agent-squad"
+      ],
+      "raw_path": "raw/bagelcode-research/tradingagents-2412.20138.{pdf,txt}",
+      "mode": "schema-foundation"
+    },
+    "bagelcode/frontier-resilience-pivot-2026-05": {
+      "ingested_at": "2026-05-01T08:30:00Z",
+      "source_type": "frontier-research",
+      "project": "bagelcode",
+      "pages_created": [
+        "projects/bagelcode/references/bagelcode-frontier-orchestration-2026.md",
+        "projects/bagelcode/concepts/bagelcode-orchestration-topology.md",
+        "projects/bagelcode/concepts/bagelcode-fault-tolerance-design.md",
+        "projects/bagelcode/synthesis/bagelcode-agents-fixed.md"
+      ],
+      "pages_updated": [
+        "projects/bagelcode/bagelcode.md",
+        "projects/bagelcode/synthesis/bagelcode-task-direction.md",
+        "index.md",
+        "log.md"
+      ],
+      "sources_referenced": [
+        "https://www.anthropic.com/engineering/multi-agent-research-system",
+        "https://cognition.ai/blog/dont-build-multi-agents",
+        "https://arxiv.org/abs/2411.04468 (Magentic-One)",
+        "https://devblogs.microsoft.com/autogen/autogen-reimagined-launching-autogen-0-4/",
+        "https://www.langchain.com/langgraph",
+        "https://arxiv.org/abs/2505.12501 (ALAS)",
+        "https://openreview.net/forum?id=bkiM54QftZ (ICML 2025 Resilience-Faulty-Agents)",
+        "https://arxiv.org/abs/2511.10400 (CP-WBFT Byzantine FT)",
+        "https://arxiv.org/abs/2512.20845 (MAR Multi-Agent Reflexion)",
+        "https://d2jud02ci9yv69.cloudfront.net/2025-04-28-mad-159/blog/mad/ (MAD survey)",
+        "https://code.claude.com/docs/en/agent-sdk/overview (Claude Code Agent SDK)",
+        "https://developers.openai.com/codex/subagents (Codex Subagents)"
+      ],
+      "key_decisions": [
+        "PDCA pipeline 폐기 (chain topology = 10.5% degradation per ICML 2025)",
+        "Hub-Ledger-Spoke topology 채택 (hierarchical = 5.5% degradation)",
+        "Claude Code + Codex 고정, cross-provider Verifier (Gemini 2.5 Pro 디폴트)",
+        "F1-F5 fault taxonomy + circuit breaker + capability probe + anti-deception + stuck escalation",
+        "ALAS local compensation, Magentic-One Task/Progress Ledger, ICML Challenger/Inspector 차용",
+        "Cognition vs Anthropic 화해 = single transcript + hierarchical spawn"
+      ],
+      "mode": "frontier-resilience-pivot"
+    },
+    "bagelcode/caching-frontier-2026-05": {
+      "ingested_at": "2026-05-01T09:30:00Z",
+      "source_type": "frontier-research",
+      "project": "bagelcode",
+      "pages_created": [
+        "projects/bagelcode/references/bagelcode-caching-frontier-2026.md"
+      ],
+      "pages_updated": [
+        "projects/bagelcode/concepts/bagelcode-caching-strategy.md",
+        "projects/bagelcode/bagelcode.md",
+        "index.md",
+        "log.md"
+      ],
+      "sources_referenced": [
+        "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+        "https://developers.openai.com/api/docs/guides/prompt-caching",
+        "https://developers.openai.com/cookbook/examples/prompt_caching_201",
+        "https://ai.google.dev/gemini-api/docs/caching",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-overview",
+        "https://openrouter.ai/docs/guides/best-practices/prompt-caching",
+        "https://arxiv.org/abs/2506.14852 (APC NeurIPS 2025)",
+        "https://www.mdpi.com/2504-4990/8/2/30 (Hierarchical Caching)",
+        "https://arxiv.org/abs/2510.12872 (KVCOMM NeurIPS 2025)",
+        "https://arxiv.org/html/2510.00615v1 (ACON)",
+        "https://arxiv.org/html/2509.17360v1 (Asteria)",
+        "https://factory.ai/news/evaluating-compression",
+        "https://www.langchain.com/blog/context-management-for-deepagents",
+        "https://arxiv.org/html/2502.03771v5 (vCache cautionary)",
+        "https://arxiv.org/abs/2601.23088 (Cache Hijack cautionary)",
+        "https://www.arxiv.org/pdf/2601.08343 (KV reuse fail in MAS cautionary)",
+        "https://arxiv.org/pdf/2411.02820 (DroidSpeak cautionary)"
+      ],
+      "key_decisions": [
+        "3-tier 분류: T1 provider-native (lossless 채택), T2 application-level (검증 hook 위에 채택), T3 semantic/naive-KV/통째 summarization (퀄리티 risk → 채택 X)",
+        "Anthropic prompt cache: sandwich = TTL 1h, transcript prefix = TTL 5m, breakpoints 4개 한도",
+        "Plan Cache (APC): topic 별 spec template + Verifier 검증 hook = quality drop 0",
+        "Hierarchical Cache: workflow (spec hash → artifact ULID) + tool (sha256 → lint 결과)",
+        "Anchored summary (long session): structured persistent summary, raw transcript 보존",
+        "정확 수치 갱신: Opus 4.7 min cacheable = 4096 tokens (이전 1024 가정 오류)"
+      ],
+      "mode": "caching-frontier"
+    },
+    "geode/prompt-system-series": {
+      "ingested_at": "2026-05-01T00:00:00Z",
+      "source_type": "code+frontier-comparison",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/concepts/geode-prompt-system.md",
+        "projects/geode/concepts/geode-prompt-templates.md",
+        "projects/geode/concepts/geode-prompt-assembly.md",
+        "projects/geode/concepts/geode-prompt-hashing.md",
+        "projects/geode/concepts/geode-prompt-frontier-comparison.md",
+        "projects/geode/concepts/geode-prompt-evolution.md"
+      ],
+      "pages_updated": [
+        "projects/geode/geode.md",
+        "index.md"
+      ],
+      "sources": [
+        "geode/core/llm/prompts/__init__.py",
+        "geode/core/llm/prompts/axes.py",
+        "geode/core/llm/prompt_assembler.py",
+        "geode/core/llm/router.py",
+        "geode/core/skills/skill_registry.py",
+        "geode/core/hooks/system.py",
+        "geode/tests/test_karpathy_prompt_hardening.py",
+        "geode/tests/test_prompt_assembler.py",
+        "hermes-agent/agent/prompt_builder.py",
+        "hermes-agent/agent/prompt_caching.py",
+        "openclaw/src/agents/system-prompt.ts",
+        "openclaw/src/agents/pi-embedded-runner/prompt-cache-observability.ts",
+        "openclaw/src/agents/anthropic-payload-policy.ts",
+        "openclaw/src/agents/system-prompt-cache-boundary.ts",
+        "openclaw/src/agents/cache-trace.ts",
+        "claude-code/constants/prompts.ts",
+        "claude-code/utils/api.ts",
+        "claude-code/utils/fingerprint.ts",
+        "claude-code/services/api/dumpPrompts.ts"
+      ],
+      "mode": "series-prompt-system"
+    },
+    "resume/common/bullet-maps-and-narratives": {
+      "ingested_at": "2026-05-01T05:30:00Z",
+      "source_type": "directory-batch",
+      "project": "geode",
+      "pages_created": [
+        "projects/geode/references/resume-bullet-maps-hub.md",
+        "projects/geode/references/resume-linkedin-narrative.md",
+        "projects/geode/references/resume-geode-bullet-map.md",
+        "projects/geode/references/resume-kiki-bullet-map.md",
+        "projects/geode/references/resume-reode-bullet-map.md",
+        "projects/geode/references/resume-eco2-bullet-map.md",
+        "projects/geode/references/resume-llm-5-commandments.md",
+        "projects/geode/references/resume-kiki-llm-wiki-reference.md"
+      ],
+      "pages_updated": [
+        "projects/geode/references/geode-changelog-summary.md",
+        "index.md"
+      ],
+      "raw_path": "raw/geode-resume/common",
+      "mode": "batch-ingest-orphan-cleanup"
+    },
+    "kiki/sync-2026-05-01-vault-mirror": {
+      "ingested_at": "2026-05-01T07:00:00Z",
+      "source_type": "vault-mirror",
+      "project": "kiki",
+      "pages_created": [
+        "projects/kiki/concepts/behavioral-profiling.md",
+        "projects/kiki/concepts/llm-wiki-pattern.md",
+        "projects/kiki/concepts/pipeline-guardrails.md",
+        "projects/kiki/concepts/review-scorecard.md",
+        "projects/kiki/concepts/scaffold-app-boundary.md",
+        "projects/kiki/concepts/versioned-plugin-path.md",
+        "projects/kiki/concepts/karpathy-engineering-principles.md",
+        "projects/kiki/governance/karpathy-identity-principles.md",
+        "projects/kiki/specs/2026-04-08-slack-bot-integration-design.md",
+        "projects/kiki/specs/2026-04-09-kiki-slack-agent-redesign.md",
+        "projects/kiki/specs/2026-04-12-diagram-dashboard-design.md",
+        "projects/kiki/specs/2026-04-12-dynamic-squad-resolution-design.md",
+        "projects/kiki/specs/2026-04-28-pipeline-reaper-design.md",
+        "projects/kiki/specs/2026-04-28-stage-reaper-effective-recovery-design.md",
+        "projects/kiki/reports/2026-04-28-session-synthesis.md",
+        "projects/kiki/plugin/jobs/zombie-sweeper.md",
+        "projects/kiki/plugin/jobs/stage-reaper.md",
+        "projects/kiki/plugin/jobs/pipeline-reaper.md",
+        "projects/kiki/plugin/jobs/pipeline-health-snapshot.md",
+        "projects/kiki/plugin/tools/broadcast_maintenance_proposals.md",
+        "projects/kiki/plugin/tools/collect_user_signals.md",
+        "projects/kiki/plugin/tools/flag_diagram_update.md",
+        "projects/kiki/plugin/tools/get_pending_slack_prompt.md",
+        "projects/kiki/plugin/tools/query_issue_detail.md",
+        "projects/kiki/plugin/tools/query_pipeline_status.md",
+        "projects/kiki/plugin/tools/read_target_project.md",
+        "projects/kiki/synthesis/agent-governance-overview.md",
+        "projects/kiki/synthesis/ttree-project.md",
+        "projects/kiki/synthesis/observation-summary-april.md"
+      ],
+      "pages_updated": [
+        "projects/kiki/kiki.md",
+        "index.md",
+        "log.md"
+      ],
+      "source_path": "/Users/mango/workspace/kiki/memory/vault/{concepts,governance,specs,reports,plugin/jobs,plugin/tools,synthesis,journal}",
+      "mode": "kiki-vault-mirror",
+      "notes": "29 pages mirrored from kiki vault → mango-wiki/projects/kiki/. Wikilinks rewritten to mango-wiki flat-namespace. Two karpathy-principles renamed: engineering vs identity to disambiguate."
+    },
+    "kiki/sync-2026-05-01-april-signals-backfill": {
+      "ingested_at": "2026-05-01T06:00:00Z",
+      "source_type": "multi-source",
+      "project": "kiki",
+      "pages_created": [
+        "projects/kiki/references/blog/kiki-signal-2026-04-08.md",
+        "projects/kiki/references/blog/kiki-signal-2026-04-08-engineering.md",
+        "projects/kiki/references/blog/kiki-signal-2026-04-10-general.md",
+        "projects/kiki/references/blog/kiki-signal-2026-04-11-null.md",
+        "projects/kiki/references/blog/kiki-signal-2026-04-15-mango.md",
+        "projects/kiki/references/blog/kiki-signal-2026-04-15-slack.md",
+        "projects/kiki/synthesis/kiki-maturity-sprint-april.md"
+      ],
+      "pages_updated": [
+        "projects/kiki/kiki.md",
+        "projects/kiki/entities/mango-user.md",
+        "projects/kiki/references/kiki-finance-signals-april.md",
+        "log.md"
+      ],
+      "raw_path": "raw/kiki-signals/, raw/kiki-profiles/, raw/kiki-teams/",
+      "raw_added": [
+        "raw/kiki-signals/sim_finance_slack_2026-04-08.md",
+        "raw/kiki-signals/obs_engineering_2026-04-08.md",
+        "raw/kiki-signals/obs_general_2026-04-10.md",
+        "raw/kiki-signals/obs_null_2026-04-11.md",
+        "raw/kiki-signals/obs_general_2026-04-15.md",
+        "raw/kiki-signals/obs_general_2026-04-15b.md",
+        "raw/kiki-profiles/user_cto_agent.md",
+        "raw/kiki-profiles/user_dev_1.md",
+        "raw/kiki-profiles/user_dev_2.md",
+        "raw/kiki-profiles/user_lead_1.md",
+        "raw/kiki-profiles/user_lead_2.md",
+        "raw/kiki-profiles/user_planner_agent.md",
+        "raw/kiki-profiles/user_po_agent.md",
+        "raw/kiki-profiles/user_qa_1.md",
+        "raw/kiki-teams/team_engineering.md"
+      ],
+      "mode": "delta-backfill"
     }
   }
 }

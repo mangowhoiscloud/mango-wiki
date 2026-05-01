@@ -40,7 +40,10 @@ export function getVaultDir(): string {
   return path.resolve(process.cwd(), "../../vault");
 }
 
-const SKIP_DIRS = new Set(["_raw", "node_modules", ".git", ".obsidian"]);
+// `raw/` (and `_raw/`) hold ingested source documents — read by the wiki-ingest
+// workflow but never displayed publicly. Skipping them here prevents profile
+// observations and team-internal signals from leaking into the static export.
+const SKIP_DIRS = new Set(["raw", "_raw", "node_modules", ".git", ".obsidian"]);
 
 function walk(root: string, dir: string, out: VaultPage[]) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -141,6 +144,16 @@ export function findBySlug(slug: string[]): VaultPage | undefined {
 export function slugToHref(slug: string[]): string {
   if (slug.length === 1 && slug[0] === "index") return "/";
   return "/wiki/" + slug.map(encodeURIComponent).join("/");
+}
+
+// Resolve the runtime basePath the same way next.config.mjs does. Used by code
+// paths that emit raw <a href=> tags (e.g. the markdown wikilink resolver) —
+// next/link components auto-prepend basePath, but raw <a> tags do not, so we
+// must inject it ourselves. Returns "" in dev / when explicitly unset.
+export function basePathPrefix(): string {
+  const explicit = process.env.MANGO_WIKI_BASE_PATH;
+  if (explicit !== undefined) return explicit;
+  return process.env.NODE_ENV === "production" ? "/mango-wiki" : "";
 }
 
 export function groupByCategory(pages: VaultPage[]): Map<string, VaultPage[]> {

@@ -1,0 +1,147 @@
+---
+title: LLM Wiki Pattern
+type: concept
+created: 2026-04-14
+updated: 2026-04-14
+tags: [wiki, karpathy, architecture, obsidian, knowledge-management]
+sources: [_raw/global/projects/kiki-identity.md, _raw/global/projects/engineering-team.md, _raw/global/projects/finance-team.md]
+---
+
+# LLM Wiki Pattern
+
+The LLM Wiki pattern is Kiki's knowledge management architecture, adapted from [Andrej Karpathy's LLM Wiki concept](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f). Instead of humans manually curating a wiki, an LLM reads raw source material and compiles it into structured, interlinked wiki pages. Humans review and query the compiled output.
+
+## 3-Layer Architecture
+
+```
+Layer 1: Raw Sources (_raw/)
+    Append-only event data from plugins, observations, and exports.
+    The source of truth. Never modified by the wiki engine.
+         │
+         ▼
+Layer 2: Wiki Pages (vault/)
+    LLM-compiled pages: entities, concepts, synthesis, projects.
+    Derived artifacts. Regenerated from raw sources on re-ingest.
+         │
+         ▼
+Layer 3: Schema (SCHEMA.md + skills)
+    Structure definitions, conventions, and compilation rules.
+    Governs how Layer 1 becomes Layer 2.
+```
+
+### Layer 1: Raw Sources
+
+Raw sources live in `_raw/` and are organized by project scope:
+
+- `_raw/{project}/agents/` -- Agent profile snapshots
+- `_raw/{project}/issues/` -- Issue metadata, specs, reviews, timelines
+- `_raw/{project}/runs/` -- Agent execution results
+- `_raw/{project}/conversations/` -- Slack interaction digests
+- `_raw/{project}/signals/` -- [[behavioral-profiling|Observation signals]]
+- `_raw/global/profiles/` -- Cross-project user profiles
+- `_raw/global/projects/` -- Project metadata and templates
+
+**Critical rule**: Raw files are **append-only**. New data is appended; content is never overwritten or deleted. This ensures no information is lost between wiki compilation cycles. The wiki engine tracks `content_hash` in `.manifest.json` and re-ingests when the hash changes.
+
+### Layer 2: Wiki Pages
+
+Compiled wiki pages live in the vault root directory structure:
+
+- `entities/` -- One page per agent, person, or team
+- `concepts/` -- Work style patterns, collaboration dynamics, system concepts
+- `synthesis/` -- Cross-cutting analyses and comparisons
+- `project/` -- Compiled issue pages with distilled context
+- `conversations/` -- Compiled conversation insights
+- `journal/` -- Daily activity journals
+- `sources/` -- Summary pages for each ingested raw source
+
+Every page uses standardized frontmatter:
+
+```markdown
+---
+title: Page Title
+type: entity | concept | synthesis | source | project | conversation
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+tags: [controlled, vocabulary]
+sources: [_raw/path/to/source.md]
+---
+```
+
+### Layer 3: Schema
+
+The [[SCHEMA]] file defines:
+- Directory structure and naming conventions
+- Frontmatter format requirements
+- Wikilink syntax rules
+- Raw source rules (append-only, no deletion after promote)
+- Output path mapping (`_raw/issues/` to `project/`, `_raw/conversations/` to `journal/`)
+- Merge strategy for re-ingesting changed sources
+
+## Obsidian Wikilinks
+
+Pages reference each other using Obsidian-style `[[wikilinks]]`:
+
+- `[[entities/agent-name]]` -- Link to an agent entity page
+- `[[pattern-name]]` -- Link to a concept page
+- `[[project/ENG-XX/overview]]` -- Link to a project issue page
+- `[[conversations/2026-04-12]]` -- Link to a conversation journal
+
+Wikilinks create a navigable knowledge graph. When rendered in Obsidian, they produce a visual graph view showing how entities, concepts, and projects interconnect.
+
+## Compilation Pipeline
+
+The wiki is populated through two primary skills:
+
+### /kiki-export
+
+Exports Kiki memory (profiles, signals, teams) into the `_raw/` layer. This is the bridge between Kiki's operational data and the wiki system.
+
+```
+memory/profiles/*.json ──> _raw/global/profiles/*.md
+memory/signals/*.json  ──> _raw/{project}/signals/*.md
+memory/teams/*.md      ──> _raw/global/projects/*.md
+```
+
+### /wiki-ingest
+
+Reads raw sources from `_raw/` and compiles them into structured wiki pages. The LLM reads each raw file, extracts key information, and creates or updates wiki pages with appropriate wikilinks.
+
+```
+_raw/issues/ENG-XX.md        ──> project/ENG-XX/overview.md
+_raw/global/profiles/user.md ──> entities/user.md
+_raw/conversations/date.md   ──> journal/date.md
+```
+
+### Re-Ingest Strategy
+
+When raw sources change (new data appended), the re-ingest strategy is:
+
+1. Compare `content_hash` against `.manifest.json`
+2. If hash changed, diff new content against the compiled page
+3. Append new sections to the wiki page (do not regenerate entirely)
+4. Update `updated:` timestamp in frontmatter
+
+## Why This Pattern
+
+Traditional wikis require human curation -- someone must read source material, summarize it, create links, and maintain consistency. This does not scale when the source material is generated by 10+ agents producing dozens of artifacts per day.
+
+The LLM Wiki pattern inverts this:
+
+- **Machines write** (compile raw sources into structured pages)
+- **Humans read** (review compiled pages, query the knowledge graph)
+- **Raw sources are append-only** (no information loss)
+- **Wiki pages are derived** (always regeneratable from raw sources)
+
+This aligns with [[karpathy-engineering-principles|P5 (Git as State Machine)]]: the raw sources are the commit log, and wiki pages are the working tree. The source of truth is always Layer 1.
+
+## See Also
+
+- [[behavioral-profiling]] -- Profiles are a primary raw source type
+- [[karpathy-engineering-principles]] -- P5 inspires the append-only, evidence-based approach
+- [[agent-governance-overview]] -- Where the wiki fits in the governance loop
+- [[SCHEMA]] -- Full schema definition for the wiki
+
+
+---
+*Mirrored from kiki vault (`memory/vault/`) — canonical source for kiki scaffold knowledge. Keep mango-wiki copy as a reference; updates flow kiki → mango-wiki via session sync.*

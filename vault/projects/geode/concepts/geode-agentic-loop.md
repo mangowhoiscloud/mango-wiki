@@ -45,6 +45,7 @@ Non-recoverable errors (permission) skip RETRY/ALTERNATIVE via [[geode-sandbox-b
 
 - [[geode-tool-routing]]
 - [[geode-llm-models]]
+- [[geode-adaptive-thinking]] — adaptive thinking 다운그레이드 로직 (consecutive_text_only_rounds, force_text)
 - [[portfolio-geode]]
 - [[blog-orchestration]]
 - [[geode]]

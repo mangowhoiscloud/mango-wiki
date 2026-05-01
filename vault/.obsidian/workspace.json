@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/geode/references/blog-legacy.md",
+                "file": "index.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "blog-legacy"
+              "title": "index"
             }
           }
         ]
@@ -40,10 +40,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "파일 탐색기"
             }
           },
           {
@@ -154,21 +155,30 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:빠른 전환기 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "bases:새 베이스 생성하기": false
     }
   },
   "active": "e6ce1bba04086e8b",
   "lastOpenFiles": [
-    "projects/geode/references/hook-claude-code-comparison.md",
     "projects/geode/concepts/geode-hook-production-gap.md",
+    "concepts/tuned-lens.md",
+    "projects/geode/references/blog/deep-thinking-ratio-reasoning-depth.md",
+    "concepts/test-time-compute-scaling.md",
+    "concepts/overthinking-inverse-scaling.md",
+    "concepts/deep-thinking-ratio.md",
+    "projects/geode/references/geode-claude-code-patterns.md",
+    "projects/kiki/entities/developer-2.md",
+    "projects/geode/references/blog-hub.md",
+    "projects/geode/references/blog-legacy.md",
+    "projects/geode/references/hook-claude-code-comparison.md",
     "CLAUDE.md",
     "projects/geode/references/blog-llm-resilience.md",
-    "projects/geode/references/blog-hub.md",
     "projects/geode/references/blog-internal.md",
     "projects/geode/references/blog-architecture.md",
     "projects/geode/references/blog-memory-context.md",
@@ -192,14 +202,6 @@
     "raw/geode-portfolio/geode/GEODE-Appendix-Context-Checkpoint.pptx",
     "raw/geode-portfolio/geode/slides-extra/s02-checkpoint.html",
     "raw/geode-portfolio/geode/slides-extra/s01-context-tiers.html",
-    "projects/geode/references/blog/57-policychain-6layer-access-control.md",
-    "projects/geode/concepts/geode-computer-use.md",
-    "projects/geode/concepts/geode-tool-system.md",
-    "projects/geode/concepts/geode-gateway.md",
-    "projects/geode/references/portfolio-geode.md",
-    "journal/2026-04-07.md",
-    "projects/geode/references/blog-tools-mcp.md",
-    "projects/geode/references/blog/51-mcp-parallel-startup-singleton-optimization.md",
     "raw/geode-portfolio/geode/versions/v9/slides/assets/v028-diagram-policy-chain.png",
     "raw/geode-portfolio/geode/versions/v9/slides/assets/v028-diagram-pipeline-dag.png",
     "raw/geode-portfolio/geode/versions/v9/slides/assets/v028-diagram-agentic-loop.png",

@@ -1,7 +1,7 @@
 import type { Root, Text, Parent, Link } from "mdast";
 import { visit, SKIP } from "unist-util-visit";
 import type { VaultPage } from "./vault";
-import { slugToHref } from "./vault";
+import { slugToHref, basePathPrefix } from "./vault";
 
 export type Resolver = (target: string) => VaultPage | undefined;
 
@@ -48,6 +48,7 @@ interface WikilinkNode {
 }
 
 export function remarkWikilinks(resolve: Resolver) {
+  const BASE = basePathPrefix();
   return () => (tree: Root) => {
     visit(tree, "text", (node: Text, index, parent) => {
       if (!parent || index == null) return;
@@ -66,7 +67,7 @@ export function remarkWikilinks(resolve: Resolver) {
         const target = m[2].trim();
         const display = (m[3] ?? target).trim();
         const hit = resolve(target);
-        const href = hit ? slugToHref(hit.slug) : `#unresolved-${encodeURIComponent(target)}`;
+        const href = hit ? BASE + slugToHref(hit.slug) : `#unresolved-${encodeURIComponent(target)}`;
         const className = hit
           ? isEmbed
             ? "wikilink wikilink--embed"
@@ -106,6 +107,7 @@ export function remarkWikilinks(resolve: Resolver) {
 // `/wiki/<slug>/`, not the on-disk path). Resolve them via the same slug
 // index used by `[[wikilinks]]` so the inline form works too.
 export function remarkInlineMdLinks(resolve: Resolver) {
+  const BASE = basePathPrefix();
   return () => (tree: Root) => {
     visit(tree, "link", (node: Link) => {
       const url = node.url ?? "";
@@ -134,7 +136,7 @@ export function remarkInlineMdLinks(resolve: Resolver) {
         node.url = `#unresolved-${encodeURIComponent(stem)}`;
         return;
       }
-      node.url = slugToHref(hit.slug) + tail;
+      node.url = BASE + slugToHref(hit.slug) + tail;
     });
   };
 }

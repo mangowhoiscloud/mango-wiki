@@ -20,13 +20,19 @@ title: Wiki Index
 - [[bagelcode-davis-system]] — DAVIS 사내 데이터 비서 (멀티 에이전트 사례 블로그)
 - [[bagelcode-ai-first-culture]] — AI-First / 에이전트를 위한 에이전트 (블로그)
 - [[bagelcode-tradingagents-paper]] — TradingAgents (arXiv 2412.20138) communication protocol
+- [[bagelcode-frontier-orchestration-2026]] — 2026-05 frontier 사료 11종 (Anthropic / Cognition / Magentic-One / AutoGen 0.4 / LangGraph / ALAS / ICML resilience / CP-WBFT / MAR / Claude Code SDK / Codex)
+- [[bagelcode-caching-frontier-2026]] — 캐싱·효율 사료 12종 3-tier (provider docs + APC + Hierarchical + KVCOMM + ACON + cautionary)
+- [[bagelcode-xml-frontier-2026]] — XML in LLM 사료 10종 (Anthropic XML 권장 + Claude Code 패턴 + grammar-constrained + TAG + format-restriction 경고)
 - [[bagelcode-transcripts-schema]] — Agent transcripts 스키마 (JSONL append-only, 18 kind, 5 actor)
 - [[bagelcode-caching-strategy]] — Anthropic ephemeral cache + sandwich 경계 + 토큰 예산
 - [[bagelcode-rubric-scoring]] — 5차원 × 5점 + 토큰 효율 + anti-deception 룰
+- [[bagelcode-orchestration-topology]] — Hub-Ledger-Spoke (PDCA 폐기 → hierarchical hybrid)
+- [[bagelcode-fault-tolerance-design]] — F1-F5 실패 분류 × 복구 primitive (연결부/통신/에이전트)
 - [[bagelcode-team-profile]] — 신작팀 페르소나 + 평가 우선순위
 - [[bagelcode-kiki-leverage]] — Kiki/AppMaker 자산 활용 매핑
 - [[bagelcode-paperclip-vs-alternatives]] — Paperclip vs Swarm/AutoGen/CrewAI 비교 (자체 구현 권장)
-- [[bagelcode-task-direction]] — 컨셉 3안 + 권장 + 기술 선택 + 스코프
+- [[bagelcode-agents-fixed]] — Claude Code + Codex 고정 + cross-provider Verifier (Gemini 디폴트)
+- [[bagelcode-task-direction]] — 컨셉 + 기술 선택 + 스코프 + PDCA 폐기 결정 기록
 
 ## Concepts
 

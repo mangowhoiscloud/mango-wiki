@@ -8,7 +8,7 @@ sources:
   - "geode/CLAUDE.md"
   - "geode/CHANGELOG.md"
 created: 2026-03-10T00:00:00Z
-updated: 2026-04-07T11:00:00Z
+updated: 2026-04-15T00:00:00Z
 ---
 
 # GEODE — General-Purpose Autonomous Execution Agent
@@ -16,7 +16,7 @@ updated: 2026-04-07T11:00:00Z
 A general-purpose autonomous execution agent built on LangGraph.
 Autonomously performs research, analysis, automation, and scheduling from a single natural-language command.
 
-Version: v0.47.0 | Python 3.12+ | 195 modules | 3525+ tests | 48 hooks | 56 tools
+Version: v0.48.0 | Python 3.12+ | 215 modules | 3939+ tests | 48 hooks | 56 tools
 
 ## Key Concepts
 - [[geode-architecture]] — 4-layer stack (Model→Runtime→Harness→Agent)
@@ -34,6 +34,35 @@ Version: v0.47.0 | Python 3.12+ | 195 modules | 3525+ tests | 48 hooks | 56 tool
 - [[geode-llm-models]] — 3-provider fallback chain (9 models)
 - [[geode-tool-routing]] — AgenticLoop autonomous tool selection
 - [[geode-quality-evaluation]] — 5-Layer verification (Game IP)
+- [[geode-scaffold-production]] — Scaffold production system (CANNOT/CAN, 8-Step, CI Ratchet)
+- [[geode-unified-scaffold]] — Hook-Driven State Machine enforcement
+
+## System Index
+
+- [[geode-system-index]] — 모든 1차 서브시스템 색인 (4계층 스택, docs sitemap 토대)
+
+## Prompt System Series
+
+- [[geode-prompt-system]] — Series hub (5계층 아키텍처 + 빠른 참조표)
+- [[geode-prompt-templates]] — 17 base/extended 템플릿 + 3 axes 데이터 카탈로그
+- [[geode-prompt-assembly]] — `PromptAssembler.assemble()` 6단계 + `PROMPT_ASSEMBLED` Hook
+- [[geode-prompt-hashing]] — Karpathy P4 ratchet (SHA-256[:12] × 18 핀) + 재핀 워크플로
+- [[geode-prompt-frontier-comparison]] — Hermes / OpenClaw / Claude Code / GEODE 4-way 수평 비교
+- [[geode-prompt-evolution]] — 8개 GAP 우선순위 (P1: skill ratchet + Anthropic cache)
+
+## Case Study: REODE Legacy Migration
+
+GEODE v0.12.0 fork → REODE: 범용 Migration & Coding Core Agent.
+Java 1.8→22, Spring Framework 4→6 마이그레이션 파이프라인 실증.
+
+| Metric | Value |
+|--------|-------|
+| Target Files | 5,523 |
+| Source Migration | Java 1.8 → 22 |
+| Framework Migration | Spring 4 → 6 |
+| Test Results | 83/83 pass |
+| Total Cost | $388 |
+| Total Time | 5h 48m |
 
 ## Blog
 - [[blog-hub]] — 99 posts central index
