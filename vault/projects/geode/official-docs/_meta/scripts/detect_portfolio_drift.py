@@ -160,28 +160,72 @@ def check_metric_drift(actual: dict, portfolio: dict) -> list[tuple[str, str, st
     return drifts
 
 
-def check_mapping_mtime_drift(mappings: list[dict]) -> list[dict]:
-    """1:1 매핑 페이지 중 wiki .md > portfolio .tsx mtime인 항목."""
-    drifts = []
+_CODE_REF_RE = re.compile(r'`([^`]+\.[a-z]+(?::[\d\-]+)?)`')
+_FUNC_NAME_RE = re.compile(r'`([a-zA-Z_][a-zA-Z0-9_]+)\(\)`')
+_FUNC_BARE_RE = re.compile(r'`([a-zA-Z_][a-zA-Z0-9_]+)`')
+
+
+def _extract_key_terms(text: str) -> set[str]:
+    """page 본문에서 식별자 추출 (code refs, 함수명, backtick term)."""
+    terms: set[str] = set()
+    terms.update(_CODE_REF_RE.findall(text))
+    terms.update(_FUNC_NAME_RE.findall(text))
+    # bare backtick은 노이즈 많음 — 영문+숫자+_ 만, 길이 ≥ 4
+    for m in _FUNC_BARE_RE.findall(text):
+        if len(m) >= 4 and "_" in m:
+            terms.add(m)
+    return terms
+
+
+def check_mapping_drift(mappings: list[dict]) -> tuple[list[dict], list[dict]]:
+    """1:1 매핑 페이지 두 종류 검사:
+
+    (A) content drift — wiki 핵심 식별자가 portfolio에 50% 미만 등장
+    (B) mtime drift   — wiki 가 portfolio보다 신규 (정보용; A 통과 시 무시 가능)
+    """
+    content_drifts: list[dict] = []
+    mtime_drifts: list[dict] = []
     for m in mappings:
         if m.get("mode") != "1:1":
             continue
-        wiki_path = WIKI_VERSION_DIR / m.get("wiki", "").replace("v0.65.0/", "")
+        wiki_rel = m.get("wiki", "")
         portfolio_rel = m.get("portfolio") or ""
         if portfolio_rel == "null" or not portfolio_rel:
             continue
+        wiki_path = DOCS_ROOT / wiki_rel
         portfolio_path = PORTFOLIO_DOCS / portfolio_rel
         if not wiki_path.exists() or not portfolio_path.exists():
             continue
+
+        # (A) content overlap
+        try:
+            wiki_text = wiki_path.read_text()
+            portfolio_text = portfolio_path.read_text()
+        except (OSError, UnicodeDecodeError):
+            continue
+        wiki_terms = _extract_key_terms(wiki_text)
+        if wiki_terms:
+            present = sum(1 for t in wiki_terms if t in portfolio_text)
+            ratio = present / len(wiki_terms)
+            if ratio < 0.5:
+                content_drifts.append({
+                    "wiki": wiki_rel,
+                    "portfolio": portfolio_rel,
+                    "overlap_ratio": round(ratio, 2),
+                    "missing_count": len(wiki_terms) - present,
+                    "total_terms": len(wiki_terms),
+                })
+
+        # (B) mtime — 정보용
         wiki_mtime = wiki_path.stat().st_mtime
         portfolio_mtime = portfolio_path.stat().st_mtime
-        if wiki_mtime > portfolio_mtime + 60:  # 1분 이상 차이
-            drifts.append({
-                "wiki": str(wiki_path.relative_to(DOCS_ROOT)),
-                "portfolio": str(portfolio_path.relative_to(PORTFOLIO_DOCS)),
+        if wiki_mtime > portfolio_mtime + 60:
+            mtime_drifts.append({
+                "wiki": wiki_rel,
+                "portfolio": portfolio_rel,
                 "wiki_newer_by_seconds": int(wiki_mtime - portfolio_mtime),
             })
-    return drifts
+    return content_drifts, mtime_drifts
 
 
 def main() -> int:
@@ -208,17 +252,23 @@ def main() -> int:
     else:
         print("  ✓ 모든 메트릭 일치")
 
-    # 2. mtime drift
+    # 2. content drift (강한 신호) + mtime drift (약한 신호)
     mapping = read_yaml_simple(META_DIR / "portfolio-mapping.yml")
-    mtime_drifts = check_mapping_mtime_drift(mapping.get("mappings", []))
+    content_drifts, mtime_drifts = check_mapping_drift(mapping.get("mappings", []))
 
-    print(f"\n[2] mtime Drift (1:1 매핑 페이지, wiki > portfolio + 60s)")
-    if mtime_drifts:
-        for d in mtime_drifts:
+    print(f"\n[2a] Content Drift (1:1 매핑, wiki 식별자 < 50% portfolio 등장)")
+    if content_drifts:
+        for d in content_drifts:
             print(f"  ⚠ {d['wiki']} → {d['portfolio']}")
-            print(f"    wiki newer by {d['wiki_newer_by_seconds']}s")
+            print(f"    overlap={d['overlap_ratio']:.2f} ({d['missing_count']}/{d['total_terms']} terms missing)")
     else:
-        print("  ✓ 1:1 매핑 모두 portfolio가 최신 또는 동기")
+        print("  ✓ 모든 1:1 페이지 content overlap ≥ 50%")
+
+    print(f"\n[2b] mtime Drift (정보용 — content 통과 시 무시 가능)")
+    if mtime_drifts:
+        print(f"  {len(mtime_drifts)} pages newer in wiki (timestamps only)")
+    else:
+        print("  ✓ 모든 1:1 페이지 portfolio 최신")
 
     # 3. wiki-only with "검토 권장" notes
     print(f"\n[3] Portfolio 추가 검토 권장 (wiki-only 중)")
@@ -234,14 +284,16 @@ def main() -> int:
     else:
         print("  (없음)")
 
-    total = len(metric_drifts) + len(mtime_drifts)
+    # content drift만 strict 평가 — mtime은 false-positive 많음
+    real_drift = len(metric_drifts) + len(content_drifts)
     print(f"\n=== Summary ===")
-    print(f"Metric drifts : {len(metric_drifts)}")
-    print(f"mtime drifts  : {len(mtime_drifts)}")
-    print(f"Review hints  : {len(review_candidates)}")
-    print(f"Total drift   : {total}")
+    print(f"Metric drifts  : {len(metric_drifts)}")
+    print(f"Content drifts : {len(content_drifts)} (strict)")
+    print(f"mtime drifts   : {len(mtime_drifts)} (informational)")
+    print(f"Review hints   : {len(review_candidates)}")
+    print(f"Real drift     : {real_drift}")
 
-    return 1 if (args.strict and total > 0) else 0
+    return 1 if (args.strict and real_drift > 0) else 0
 
 
 if __name__ == "__main__":
