@@ -1,0 +1,333 @@
+# Wiki ↔ Portfolio page mapping (Option D — Hybrid sync, see portfolio-sync-decision.md).
+#
+# wiki_path  : official-docs/v<X.Y.Z>/<...>.md
+# portfolio  : portfolio/src/app/geode/docs/<slug>/page.tsx (또는 page.tsx index)
+# mode       : "1:1" / "merged" / "wiki-only" / "portfolio-only"
+# notes      : 동기 시점에 주의할 점
+
+geode_version: 0.65.0
+portfolio_path: /Users/mango/workspace/portfolio/src/app/geode/docs
+
+mappings:
+
+  # ===== 00-overview =====
+  - wiki: 00-overview/what-is-geode.md
+    portfolio: page.tsx
+    mode: 1:1
+    notes: "portfolio index page header summary 매트릭 갱신 필요"
+
+  - wiki: 00-overview/design-philosophy.md
+    portfolio: null
+    mode: wiki-only
+    notes: "외부 노출 가치 낮음 — wiki SOT로 충분"
+
+  - wiki: 00-overview/frontier-comparison.md
+    portfolio: reference/frontier-comparison/page.tsx
+    mode: 1:1
+    notes: "portfolio 표 갱신 우선 — 신규 GEODE 차별점 반영"
+
+  # ===== 01-getting-started =====
+  - wiki: 01-getting-started/installation.md
+    portfolio: null
+    mode: wiki-only
+    notes: "portfolio quick-start에 일부 흡수"
+
+  - wiki: 01-getting-started/quickstart.md
+    portfolio: quick-start/page.tsx
+    mode: 1:1
+
+  - wiki: 01-getting-started/learning-path.md
+    portfolio: null
+    mode: wiki-only
+    notes: "Hermes 패턴 차용 — wiki 내부 가이드용"
+
+  - wiki: 01-getting-started/first-analysis.md
+    portfolio: null
+    mode: wiki-only
+    notes: "quick-start와 중첩"
+
+  # ===== 02-architecture =====
+  - wiki: 02-architecture/4-layer-stack.md
+    portfolio: architecture/overview/page.tsx
+    mode: 1:1
+
+  - wiki: 02-architecture/agentic-loop.md
+    portfolio: architecture/agentic-loop/page.tsx
+    mode: 1:1
+
+  - wiki: 02-architecture/system-index.md
+    portfolio: architecture/system-index/page.tsx
+    mode: 1:1
+    notes: "메트릭 (modules, tests, hooks) 갱신 우선"
+
+  - wiki: 02-architecture/thin-cli-vs-serve.md
+    portfolio: null
+    mode: wiki-only
+
+  - wiki: 02-architecture/data-flow.md
+    portfolio: null
+    mode: wiki-only
+
+  # ===== 03-runtime/llm =====
+  - wiki: 03-runtime/llm/prompt-system.md
+    portfolio: runtime/llm/prompt-system/page.tsx
+    mode: 1:1
+
+  - wiki: 03-runtime/llm/prompt-caching.md
+    portfolio: runtime/llm/prompt-caching/page.tsx
+    mode: 1:1
+    notes: "v0.65.0 messages-level cache_control 추가 반영 필수"
+
+  - wiki: 03-runtime/llm/prompt-hashing.md
+    portfolio: runtime/llm/prompt-hashing/page.tsx
+    mode: 1:1
+
+  - wiki: 03-runtime/llm/observability.md
+    portfolio: runtime/llm/langsmith/page.tsx
+    mode: 1:1
+
+  - wiki: 03-runtime/llm/providers/anthropic.md
+    portfolio: runtime/llm/providers/page.tsx
+    mode: merged
+    notes: "wiki 5개 (anthropic/codex/glm/payg/fallback) → portfolio 1개 통합 페이지"
+
+  - wiki: 03-runtime/llm/providers/openai-codex.md
+    portfolio: runtime/llm/providers/page.tsx
+    mode: merged
+
+  - wiki: 03-runtime/llm/providers/openai-payg.md
+    portfolio: runtime/llm/providers/page.tsx
+    mode: merged
+
+  - wiki: 03-runtime/llm/providers/glm.md
+    portfolio: runtime/llm/providers/page.tsx
+    mode: merged
+
+  - wiki: 03-runtime/llm/providers/fallback-rotation.md
+    portfolio: runtime/llm/providers/page.tsx
+    mode: merged
+
+  # ===== 03-runtime/tools =====
+  - wiki: 03-runtime/tools/protocol.md
+    portfolio: runtime/tools/protocol/page.tsx
+    mode: 1:1
+
+  - wiki: 03-runtime/tools/mcp.md
+    portfolio: runtime/tools/mcp/page.tsx
+    mode: 1:1
+
+  - wiki: 03-runtime/tools/safety-tiers.md
+    portfolio: null
+    mode: wiki-only
+    notes: "portfolio policy-chain (safety) 페이지에 흡수 가능"
+
+  # ===== 03-runtime/memory =====
+  - wiki: 03-runtime/memory/5-tier-context.md
+    portfolio: runtime/memory/5-tier/page.tsx
+    mode: 1:1
+
+  - wiki: 03-runtime/memory/vault.md
+    portfolio: runtime/memory/vault/page.tsx
+    mode: 1:1
+
+  - wiki: 03-runtime/memory/breadcrumb.md
+    portfolio: null
+    mode: wiki-only
+
+  # ===== 03-runtime/auth =====
+  - wiki: 03-runtime/auth/overview.md
+    portfolio: runtime/auth/page.tsx
+    mode: merged
+    notes: "wiki 4개 (overview/credential-semantics/oauth-flow/plan-registry) → portfolio 1개 통합"
+
+  - wiki: 03-runtime/auth/credential-semantics.md
+    portfolio: runtime/auth/page.tsx
+    mode: merged
+
+  - wiki: 03-runtime/auth/oauth-flow.md
+    portfolio: runtime/auth/page.tsx
+    mode: merged
+
+  - wiki: 03-runtime/auth/plan-registry.md
+    portfolio: runtime/auth/page.tsx
+    mode: merged
+
+  # ===== 03-runtime/etc =====
+  - wiki: 03-runtime/scheduler.md
+    portfolio: runtime/scheduler/page.tsx
+    mode: 1:1
+
+  - wiki: 03-runtime/orchestration.md
+    portfolio: runtime/orchestration/page.tsx
+    mode: 1:1
+
+  - wiki: 03-runtime/automation.md
+    portfolio: runtime/automation/page.tsx
+    mode: 1:1
+
+  - wiki: 03-runtime/computer-use.md
+    portfolio: runtime/computer-use/page.tsx
+    mode: 1:1
+
+  - wiki: 03-runtime/domains.md
+    portfolio: runtime/domains/page.tsx
+    mode: 1:1
+
+  # ===== 04-harness =====
+  - wiki: 04-harness/cli/overview.md
+    portfolio: harness/cli/page.tsx
+    mode: merged
+
+  - wiki: 04-harness/cli/manage-login.md
+    portfolio: harness/cli/page.tsx
+    mode: merged
+    notes: "v0.65.0 핵심 fix story — portfolio에 흡수 또는 별도 신설 권장"
+
+  - wiki: 04-harness/hooks/overview.md
+    portfolio: harness/hooks/page.tsx
+    mode: merged
+
+  - wiki: 04-harness/hooks/58-events.md
+    portfolio: harness/hooks/page.tsx
+    mode: merged
+
+  - wiki: 04-harness/hooks/handler-patterns.md
+    portfolio: harness/hooks/page.tsx
+    mode: merged
+
+  - wiki: 04-harness/lifecycle.md
+    portfolio: harness/lifecycle/page.tsx
+    mode: 1:1
+
+  - wiki: 04-harness/safety/policy-chain.md
+    portfolio: null
+    mode: wiki-only
+
+  - wiki: 04-harness/safety/approval.md
+    portfolio: null
+    mode: wiki-only
+
+  # ===== 05-verification =====
+  - wiki: 05-verification/guardrails-g1-g4.md
+    portfolio: verification/guardrails/page.tsx
+    mode: 1:1
+
+  - wiki: 05-verification/biasbuster.md
+    portfolio: verification/biasbuster/page.tsx
+    mode: 1:1
+
+  - wiki: 05-verification/decision-tree.md
+    portfolio: null
+    mode: wiki-only
+    notes: "도메인 specific — game_ip plugin 페이지에 흡수 가능"
+
+  - wiki: 05-verification/cross-llm.md
+    portfolio: null
+    mode: wiki-only
+
+  # ===== 06-plugins =====
+  - wiki: 06-plugins/overview.md
+    portfolio: plugins/game-ip/page.tsx
+    mode: merged
+
+  - wiki: 06-plugins/domain-port-protocol.md
+    portfolio: plugins/game-ip/page.tsx
+    mode: merged
+
+  - wiki: 06-plugins/building-a-plugin.md
+    portfolio: null
+    mode: wiki-only
+    notes: "개발자용 — wiki SOT로 충분"
+
+  - wiki: 06-plugins/game-ip/pipeline.md
+    portfolio: plugins/game-ip/page.tsx
+    mode: merged
+
+  - wiki: 06-plugins/game-ip/analysts-evaluators.md
+    portfolio: plugins/game-ip/page.tsx
+    mode: merged
+
+  - wiki: 06-plugins/game-ip/psm-scoring.md
+    portfolio: plugins/game-ip/page.tsx
+    mode: merged
+
+  # ===== 07-skills =====
+  - wiki: 07-skills/registry.md
+    portfolio: null
+    mode: wiki-only
+    notes: "개발자용"
+
+  - wiki: 07-skills/skill-creator.md
+    portfolio: null
+    mode: wiki-only
+
+  - wiki: 07-skills/catalog.md
+    portfolio: null
+    mode: wiki-only
+
+  # ===== 08-developer-guide =====
+  - wiki: 08-developer-guide/workflow.md
+    portfolio: null
+    mode: wiki-only
+
+  - wiki: 08-developer-guide/socratic-gate.md
+    portfolio: null
+    mode: wiki-only
+
+  - wiki: 08-developer-guide/verification-team.md
+    portfolio: null
+    mode: wiki-only
+
+  - wiki: 08-developer-guide/contributing.md
+    portfolio: null
+    mode: wiki-only
+
+  - wiki: 08-developer-guide/testing.md
+    portfolio: null
+    mode: wiki-only
+
+  # ===== 09-operations =====
+  - wiki: 09-operations/slack-gateway.md
+    portfolio: null
+    mode: wiki-only
+
+  - wiki: 09-operations/debugging.md
+    portfolio: null
+    mode: wiki-only
+
+  - wiki: 09-operations/faq.md
+    portfolio: null
+    mode: wiki-only
+
+  - wiki: 09-operations/troubleshooting.md
+    portfolio: null
+    mode: wiki-only
+
+  - wiki: 09-operations/env-vars.md
+    portfolio: null
+    mode: wiki-only
+
+  # ===== 99-reference =====
+  - wiki: 99-reference/changelog.md
+    portfolio: reference/changelog/page.tsx
+    mode: 1:1
+
+  - wiki: 99-reference/version-policy.md
+    portfolio: null
+    mode: wiki-only
+
+  - wiki: 99-reference/api-internals.md
+    portfolio: null
+    mode: wiki-only
+
+  - wiki: 99-reference/glossary.md
+    portfolio: null
+    mode: wiki-only
+    notes: "외부 노출 가치 — 검토 후 portfolio 추가 가능"
+
+# ===== Summary =====
+# Total wiki pages: 71
+# Mapped 1:1     : 21
+# Merged         : 19 (wiki: providers 5, auth 4, harness/cli 2, harness/hooks 3, plugins 5)
+# Wiki-only      : 31
+# Portfolio-only : 0
