@@ -1,0 +1,580 @@
+{
+  "computed_at": "2026-05-02T12:15:22.019752Z",
+  "weights": {
+    "trace_hits": 0.6,
+    "git_commits": 0.3,
+    "cross_links": 0.1
+  },
+  "trace_hits_measured": false,
+  "page_count": 71,
+  "pages": [
+    {
+      "path": "v0.65.0/04-harness/cli/manage-login.md",
+      "priority": 0.4,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 20,
+      "rank": 1
+    },
+    {
+      "path": "v0.65.0/05-verification/guardrails-g1-g4.md",
+      "priority": 0.34,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 8,
+      "rank": 2
+    },
+    {
+      "path": "v0.65.0/06-plugins/game-ip/pipeline.md",
+      "priority": 0.34,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 8,
+      "rank": 3
+    },
+    {
+      "path": "v0.65.0/03-runtime/auth/overview.md",
+      "priority": 0.335,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 7,
+      "rank": 4
+    },
+    {
+      "path": "v0.65.0/04-harness/cli/overview.md",
+      "priority": 0.335,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 7,
+      "rank": 5
+    },
+    {
+      "path": "v0.65.0/04-harness/hooks/overview.md",
+      "priority": 0.335,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 7,
+      "rank": 6
+    },
+    {
+      "path": "v0.65.0/06-plugins/overview.md",
+      "priority": 0.335,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 7,
+      "rank": 7
+    },
+    {
+      "path": "v0.65.0/08-developer-guide/testing.md",
+      "priority": 0.335,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 7,
+      "rank": 8
+    },
+    {
+      "path": "v0.65.0/03-runtime/auth/credential-semantics.md",
+      "priority": 0.33,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 6,
+      "rank": 9
+    },
+    {
+      "path": "v0.65.0/03-runtime/auth/oauth-flow.md",
+      "priority": 0.33,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 6,
+      "rank": 10
+    },
+    {
+      "path": "v0.65.0/03-runtime/auth/plan-registry.md",
+      "priority": 0.33,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 6,
+      "rank": 11
+    },
+    {
+      "path": "v0.65.0/03-runtime/tools/safety-tiers.md",
+      "priority": 0.33,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 6,
+      "rank": 12
+    },
+    {
+      "path": "v0.65.0/04-harness/safety/approval.md",
+      "priority": 0.33,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 6,
+      "rank": 13
+    },
+    {
+      "path": "v0.65.0/08-developer-guide/workflow.md",
+      "priority": 0.33,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 6,
+      "rank": 14
+    },
+    {
+      "path": "v0.65.0/09-operations/debugging.md",
+      "priority": 0.33,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 6,
+      "rank": 15
+    },
+    {
+      "path": "v0.65.0/02-architecture/4-layer-stack.md",
+      "priority": 0.325,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 5,
+      "rank": 16
+    },
+    {
+      "path": "v0.65.0/03-runtime/llm/prompt-caching.md",
+      "priority": 0.325,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 5,
+      "rank": 17
+    },
+    {
+      "path": "v0.65.0/03-runtime/llm/providers/fallback-rotation.md",
+      "priority": 0.325,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 5,
+      "rank": 18
+    },
+    {
+      "path": "v0.65.0/04-harness/lifecycle.md",
+      "priority": 0.325,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 5,
+      "rank": 19
+    },
+    {
+      "path": "v0.65.0/05-verification/decision-tree.md",
+      "priority": 0.325,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 5,
+      "rank": 20
+    },
+    {
+      "path": "v0.65.0/06-plugins/building-a-plugin.md",
+      "priority": 0.325,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 5,
+      "rank": 21
+    },
+    {
+      "path": "v0.65.0/06-plugins/domain-port-protocol.md",
+      "priority": 0.325,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 5,
+      "rank": 22
+    },
+    {
+      "path": "v0.65.0/08-developer-guide/verification-team.md",
+      "priority": 0.325,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 5,
+      "rank": 23
+    },
+    {
+      "path": "v0.65.0/09-operations/env-vars.md",
+      "priority": 0.325,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 5,
+      "rank": 24
+    },
+    {
+      "path": "v0.65.0/03-runtime/llm/providers/openai-codex.md",
+      "priority": 0.32,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 4,
+      "rank": 25
+    },
+    {
+      "path": "v0.65.0/03-runtime/memory/5-tier-context.md",
+      "priority": 0.32,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 4,
+      "rank": 26
+    },
+    {
+      "path": "v0.65.0/03-runtime/memory/breadcrumb.md",
+      "priority": 0.32,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 4,
+      "rank": 27
+    },
+    {
+      "path": "v0.65.0/03-runtime/tools/mcp.md",
+      "priority": 0.32,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 4,
+      "rank": 28
+    },
+    {
+      "path": "v0.65.0/04-harness/hooks/58-events.md",
+      "priority": 0.32,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 4,
+      "rank": 29
+    },
+    {
+      "path": "v0.65.0/04-harness/safety/policy-chain.md",
+      "priority": 0.32,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 4,
+      "rank": 30
+    },
+    {
+      "path": "v0.65.0/05-verification/biasbuster.md",
+      "priority": 0.32,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 4,
+      "rank": 31
+    },
+    {
+      "path": "v0.65.0/06-plugins/game-ip/psm-scoring.md",
+      "priority": 0.32,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 4,
+      "rank": 32
+    },
+    {
+      "path": "v0.65.0/08-developer-guide/socratic-gate.md",
+      "priority": 0.32,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 4,
+      "rank": 33
+    },
+    {
+      "path": "v0.65.0/00-overview/frontier-comparison.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 34
+    },
+    {
+      "path": "v0.65.0/01-getting-started/first-analysis.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 35
+    },
+    {
+      "path": "v0.65.0/01-getting-started/installation.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 36
+    },
+    {
+      "path": "v0.65.0/01-getting-started/quickstart.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 37
+    },
+    {
+      "path": "v0.65.0/02-architecture/thin-cli-vs-serve.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 38
+    },
+    {
+      "path": "v0.65.0/03-runtime/llm/prompt-hashing.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 39
+    },
+    {
+      "path": "v0.65.0/03-runtime/llm/prompt-system.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 40
+    },
+    {
+      "path": "v0.65.0/03-runtime/llm/providers/anthropic.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 41
+    },
+    {
+      "path": "v0.65.0/03-runtime/scheduler.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 42
+    },
+    {
+      "path": "v0.65.0/03-runtime/tools/protocol.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 43
+    },
+    {
+      "path": "v0.65.0/05-verification/cross-llm.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 44
+    },
+    {
+      "path": "v0.65.0/07-skills/catalog.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 45
+    },
+    {
+      "path": "v0.65.0/08-developer-guide/contributing.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 46
+    },
+    {
+      "path": "v0.65.0/09-operations/faq.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 47
+    },
+    {
+      "path": "v0.65.0/09-operations/slack-gateway.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 48
+    },
+    {
+      "path": "v0.65.0/09-operations/troubleshooting.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 49
+    },
+    {
+      "path": "v0.65.0/99-reference/changelog.md",
+      "priority": 0.315,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 50
+    },
+    {
+      "path": "v0.65.0/00-overview/design-philosophy.md",
+      "priority": 0.31,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 2,
+      "rank": 51
+    },
+    {
+      "path": "v0.65.0/01-getting-started/learning-path.md",
+      "priority": 0.31,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 2,
+      "rank": 52
+    },
+    {
+      "path": "v0.65.0/02-architecture/data-flow.md",
+      "priority": 0.31,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 2,
+      "rank": 53
+    },
+    {
+      "path": "v0.65.0/03-runtime/automation.md",
+      "priority": 0.31,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 2,
+      "rank": 54
+    },
+    {
+      "path": "v0.65.0/03-runtime/orchestration.md",
+      "priority": 0.31,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 2,
+      "rank": 55
+    },
+    {
+      "path": "v0.65.0/04-harness/hooks/handler-patterns.md",
+      "priority": 0.31,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 2,
+      "rank": 56
+    },
+    {
+      "path": "v0.65.0/06-plugins/game-ip/analysts-evaluators.md",
+      "priority": 0.31,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 2,
+      "rank": 57
+    },
+    {
+      "path": "v0.65.0/07-skills/registry.md",
+      "priority": 0.31,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 2,
+      "rank": 58
+    },
+    {
+      "path": "v0.65.0/07-skills/skill-creator.md",
+      "priority": 0.31,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 2,
+      "rank": 59
+    },
+    {
+      "path": "v0.65.0/99-reference/version-policy.md",
+      "priority": 0.31,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 2,
+      "rank": 60
+    },
+    {
+      "path": "v0.65.0/02-architecture/agentic-loop.md",
+      "priority": 0.305,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 1,
+      "rank": 61
+    },
+    {
+      "path": "v0.65.0/02-architecture/system-index.md",
+      "priority": 0.305,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 1,
+      "rank": 62
+    },
+    {
+      "path": "v0.65.0/03-runtime/llm/observability.md",
+      "priority": 0.305,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 1,
+      "rank": 63
+    },
+    {
+      "path": "v0.65.0/03-runtime/memory/vault.md",
+      "priority": 0.305,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 1,
+      "rank": 64
+    },
+    {
+      "path": "v0.65.0/00-overview/what-is-geode.md",
+      "priority": 0.3,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 0,
+      "rank": 65
+    },
+    {
+      "path": "v0.65.0/03-runtime/computer-use.md",
+      "priority": 0.3,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 0,
+      "rank": 66
+    },
+    {
+      "path": "v0.65.0/03-runtime/domains.md",
+      "priority": 0.3,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 0,
+      "rank": 67
+    },
+    {
+      "path": "v0.65.0/03-runtime/llm/providers/glm.md",
+      "priority": 0.3,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 0,
+      "rank": 68
+    },
+    {
+      "path": "v0.65.0/03-runtime/llm/providers/openai-payg.md",
+      "priority": 0.3,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 0,
+      "rank": 69
+    },
+    {
+      "path": "v0.65.0/99-reference/api-internals.md",
+      "priority": 0.3,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 0,
+      "rank": 70
+    },
+    {
+      "path": "v0.65.0/99-reference/glossary.md",
+      "priority": 0.3,
+      "trace_hits_30d": null,
+      "git_commits_30d": 2,
+      "cross_link_count": 0,
+      "rank": 71
+    }
+  ]
+}
