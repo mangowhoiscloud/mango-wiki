@@ -1,0 +1,26 @@
+{
+  "current": "0.65.0",
+  "supported": ["0.65.0"],
+  "frozen": [],
+  "last_updated": "2026-05-02",
+  "version_source_of_truth": {
+    "pyproject_toml": "/Users/mango/workspace/geode/pyproject.toml",
+    "claude_md": "/Users/mango/workspace/geode/CLAUDE.md",
+    "readme_md": "/Users/mango/workspace/geode/README.md",
+    "changelog_md": "/Users/mango/workspace/geode/CHANGELOG.md"
+  },
+  "release_history": [
+    {
+      "version": "0.65.0",
+      "date": "2026-05-02",
+      "summary": "manage_login verdict fix + Anthropic messages cache_control",
+      "merge_pr": "#868"
+    }
+  ],
+  "policy": {
+    "minor_bump_trigger": "any new feature in [Unreleased]",
+    "patch_bump_trigger": "bug fix only",
+    "freeze_trigger": "next minor released; frozen versions move to archive/",
+    "migration_doc_required_when": "breaking API/CLI/schema change"
+  }
+}

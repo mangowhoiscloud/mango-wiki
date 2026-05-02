@@ -1,0 +1,437 @@
+# GEODE Official Docs — Source Map (P1 skeleton, P2에서 채워짐)
+#
+# 각 page → 코드/문서 SOT 매핑. P2 단계에서 Explore 에이전트로 확정.
+# 형식:
+#   <page-path>:
+#     code:
+#       - path: core/<...>.py
+#         lines: <start-end>
+#         purpose: <왜 이 파일/라인이 페이지 SOT인지>
+#     docs:
+#       - path: GEODE.md
+#         section: <heading>
+#     external:
+#       - url: https://docs.openclaw.ai/...
+#         pattern: <빌린 패턴 이름>
+#     metrics:
+#       - name: <메트릭 이름>
+#         value: <측정값>
+#         source: <명령 또는 파일>
+
+geode_version: 0.65.0
+last_grounded: 2026-05-02
+
+pages:
+
+  # ==================================================================
+  # 00-overview
+  # ==================================================================
+  v0.65.0/00-overview/what-is-geode.md:
+    code: []
+    docs:
+      - path: GEODE.md
+        section: "Identity & Architecture"
+      - path: README.md
+        section: "Headline"
+    external: []
+
+  v0.65.0/00-overview/design-philosophy.md:
+    code:
+      - path: CLAUDE.md
+        section: "CANNOT — Absolute Prohibition Rules"
+        purpose: "constraints-first design; CANNOT/CAN dichotomy SOT"
+    docs:
+      - path: vault/projects/geode/concepts/karpathy-patterns.md
+        section: "P1-P10"
+    external:
+      - url: https://docs.openclaw.ai/concepts/architecture.md
+        pattern: "Policy Chain"
+      - url: https://hermes-agent.nousresearch.com/docs/developer-guide/architecture
+        pattern: "Self-learning loop philosophy"
+
+  v0.65.0/00-overview/frontier-comparison.md:
+    code: []
+    docs:
+      - path: vault/projects/geode/references/
+        section: "frontier harness research notes"
+    external:
+      - url: https://docs.openclaw.ai/llms.txt
+      - url: https://hermes-agent.nousresearch.com/docs/
+
+  # ==================================================================
+  # 01-getting-started
+  # ==================================================================
+  v0.65.0/01-getting-started/installation.md:
+    code:
+      - path: pyproject.toml
+        purpose: "uv install instructions, py>=3.12"
+    docs:
+      - path: README.md
+        section: "Setup"
+
+  v0.65.0/01-getting-started/quickstart.md:
+    code:
+      - path: core/cli/__init__.py
+      - path: core/cli/agentic_loop.py
+    docs:
+      - path: README.md
+
+  v0.65.0/01-getting-started/learning-path.md:
+    external:
+      - url: https://hermes-agent.nousresearch.com/docs/getting-started/learning-path
+        pattern: "Progressive learning order pattern"
+
+  v0.65.0/01-getting-started/first-analysis.md:
+    code:
+      - path: plugins/game_ip/adapter.py
+      - path: core/cli/__init__.py
+    metrics:
+      - name: dry_run_score_cowboy_bebop
+        value: "A (68.4)"
+        source: "uv run geode analyze 'Cowboy Bebop' --dry-run"
+
+  # ==================================================================
+  # 02-architecture
+  # ==================================================================
+  v0.65.0/02-architecture/4-layer-stack.md:
+    code:
+      - path: core/runtime.py
+      - path: core/graph.py
+      - path: core/cli/agentic_loop.py
+    docs:
+      - path: GEODE.md
+        section: "4-layer stack"
+
+  v0.65.0/02-architecture/agentic-loop.md:
+    code:
+      - path: core/cli/agentic_loop.py
+        purpose: "while(tool_use) primitive"
+
+  v0.65.0/02-architecture/system-index.md:
+    code:
+      - path: core/runtime.py
+      - path: core/lifecycle/container.py
+    metrics:
+      - name: total_modules
+        value: 236
+        source: "find core/ plugins/ -name '*.py' | wc -l"
+      - name: tests
+        value: "4380+ (1 skipped, 24 deselected)"
+        source: "uv run pytest tests/ -m 'not live'"
+      - name: hooks
+        value: 58
+        source: "docs/architecture/hook-system.md"
+
+  v0.65.0/02-architecture/thin-cli-vs-serve.md:
+    code:
+      - path: core/cli/__init__.py
+      - path: core/server/ipc_server/poller.py
+      - path: core/cli/ipc_client.py
+
+  v0.65.0/02-architecture/data-flow.md:
+    code:
+      - path: core/graph.py
+
+  # ==================================================================
+  # 03-runtime/llm
+  # ==================================================================
+  v0.65.0/03-runtime/llm/prompt-system.md:
+    code:
+      - path: core/llm/prompts/
+      - path: core/llm/prompts/__init__.py
+
+  v0.65.0/03-runtime/llm/prompt-caching.md:
+    code:
+      - path: core/llm/providers/anthropic.py
+        purpose: "apply_messages_cache_control + system block split"
+    docs:
+      - path: CHANGELOG.md
+        section: "[0.65.0] Added — Messages-level cache_control"
+
+  v0.65.0/03-runtime/llm/prompt-hashing.md:
+    code:
+      - path: core/llm/prompts/
+
+  v0.65.0/03-runtime/llm/providers/anthropic.md:
+    code:
+      - path: core/llm/providers/anthropic.py
+
+  v0.65.0/03-runtime/llm/providers/openai-codex.md:
+    code:
+      - path: core/llm/providers/codex.py
+      - path: core/auth/oauth_login.py
+        lines: "315-368"
+        purpose: "JWT chatgpt_plan_type extraction"
+
+  v0.65.0/03-runtime/llm/providers/openai-payg.md:
+    code:
+      - path: core/llm/providers/openai.py
+
+  v0.65.0/03-runtime/llm/providers/glm.md:
+    code:
+      - path: core/llm/providers/glm.py
+
+  v0.65.0/03-runtime/llm/providers/fallback-rotation.md:
+    code:
+      - path: core/auth/plan_registry.py
+        lines: "122-206"
+        purpose: "resolve_routing equivalence-class fallback"
+
+  v0.65.0/03-runtime/llm/observability.md:
+    code:
+      - path: core/llm/
+
+  # ==================================================================
+  # 03-runtime/tools
+  # ==================================================================
+  v0.65.0/03-runtime/tools/protocol.md:
+    code:
+      - path: core/tools/definitions.json
+      - path: core/cli/tool_handlers.py
+
+  v0.65.0/03-runtime/tools/mcp.md:
+    code:
+      - path: core/mcp/
+
+  v0.65.0/03-runtime/tools/safety-tiers.md:
+    code:
+      - path: core/agent/safety.py
+      - path: core/agent/sub_agent.py
+
+  # ==================================================================
+  # 03-runtime/memory
+  # ==================================================================
+  v0.65.0/03-runtime/memory/5-tier-context.md:
+    code:
+      - path: core/memory/
+
+  v0.65.0/03-runtime/memory/vault.md:
+    code:
+      - path: core/memory/
+
+  v0.65.0/03-runtime/memory/breadcrumb.md:
+    code:
+      - path: core/auth/credential_breadcrumb.py
+        purpose: "LLM-readable credential note pattern"
+
+  # ==================================================================
+  # 03-runtime/auth
+  # ==================================================================
+  v0.65.0/03-runtime/auth/overview.md:
+    code:
+      - path: core/auth/profiles.py
+      - path: core/lifecycle/container.py
+
+  v0.65.0/03-runtime/auth/credential-semantics.md:
+    code:
+      - path: core/auth/profiles.py
+        lines: "176-261"
+        purpose: "evaluate_eligibility + ProfileRejectReason 5종"
+
+  v0.65.0/03-runtime/auth/oauth-flow.md:
+    code:
+      - path: core/auth/oauth_login.py
+        purpose: "device code + JWT claim 추출"
+
+  v0.65.0/03-runtime/auth/plan-registry.md:
+    code:
+      - path: core/auth/plan_registry.py
+      - path: core/auth/plans.py
+
+  # ==================================================================
+  # 03-runtime/scheduler / orchestration / automation / computer-use / domains
+  # ==================================================================
+  v0.65.0/03-runtime/scheduler.md:
+    code:
+      - path: core/scheduler/
+
+  v0.65.0/03-runtime/orchestration.md:
+    code:
+      - path: core/agent/
+
+  v0.65.0/03-runtime/automation.md:
+    code:
+      - path: core/
+
+  v0.65.0/03-runtime/computer-use.md:
+    code:
+      - path: core/
+
+  v0.65.0/03-runtime/domains.md:
+    code:
+      - path: core/domains/loader.py
+      - path: plugins/
+
+  # ==================================================================
+  # 04-harness
+  # ==================================================================
+  v0.65.0/04-harness/cli/overview.md:
+    code:
+      - path: core/cli/__init__.py
+      - path: core/cli/commands.py
+
+  v0.65.0/04-harness/cli/manage-login.md:
+    code:
+      - path: core/cli/tool_handlers.py
+        lines: "882-955"
+        purpose: "manage_login tool handler"
+    docs:
+      - path: CHANGELOG.md
+        section: "[0.65.0] Fixed — verdict reporting"
+
+  v0.65.0/04-harness/hooks/overview.md:
+    code:
+      - path: core/hooks/
+    docs:
+      - path: docs/architecture/hook-system.md
+
+  v0.65.0/04-harness/hooks/58-events.md:
+    docs:
+      - path: docs/architecture/hook-system.md
+    metrics:
+      - name: hook_event_count
+        value: 58
+        source: "CLAUDE.md SOT row"
+
+  v0.65.0/04-harness/hooks/handler-patterns.md:
+    code:
+      - path: core/hooks/
+
+  v0.65.0/04-harness/lifecycle.md:
+    code:
+      - path: core/cli/cmd_lifecycle.py
+      - path: core/lifecycle/container.py
+
+  v0.65.0/04-harness/safety/policy-chain.md:
+    code:
+      - path: core/tools/policy.py
+
+  v0.65.0/04-harness/safety/approval.md:
+    code:
+      - path: core/agent/approval.py
+
+  # ==================================================================
+  # 05-verification
+  # ==================================================================
+  v0.65.0/05-verification/guardrails-g1-g4.md:
+    code:
+      - path: core/verification/
+
+  v0.65.0/05-verification/biasbuster.md:
+    code:
+      - path: core/verification/
+
+  v0.65.0/05-verification/decision-tree.md:
+    code:
+      - path: core/verification/
+
+  v0.65.0/05-verification/cross-llm.md:
+    code:
+      - path: core/verification/
+
+  # ==================================================================
+  # 06-plugins
+  # ==================================================================
+  v0.65.0/06-plugins/overview.md:
+    code:
+      - path: core/domains/loader.py
+      - path: plugins/__init__.py
+
+  v0.65.0/06-plugins/domain-port-protocol.md:
+    code:
+      - path: core/domains/
+
+  v0.65.0/06-plugins/building-a-plugin.md:
+    code:
+      - path: plugins/game_ip/
+        purpose: "참고 구현 (reference implementation)"
+
+  v0.65.0/06-plugins/game-ip/pipeline.md:
+    code:
+      - path: plugins/game_ip/
+
+  v0.65.0/06-plugins/game-ip/analysts-evaluators.md:
+    code:
+      - path: plugins/game_ip/
+
+  v0.65.0/06-plugins/game-ip/psm-scoring.md:
+    code:
+      - path: plugins/game_ip/
+
+  # ==================================================================
+  # 07-skills
+  # ==================================================================
+  v0.65.0/07-skills/registry.md:
+    code:
+      - path: core/skills/
+
+  v0.65.0/07-skills/skill-creator.md:
+    docs:
+      - path: .claude/skills/skill-creator/
+
+  v0.65.0/07-skills/catalog.md:
+    docs:
+      - path: .claude/skills/
+
+  # ==================================================================
+  # 08-developer-guide
+  # ==================================================================
+  v0.65.0/08-developer-guide/workflow.md:
+    docs:
+      - path: CLAUDE.md
+        section: "Workflow Steps 0-8"
+
+  v0.65.0/08-developer-guide/socratic-gate.md:
+    docs:
+      - path: CLAUDE.md
+        section: "2. Plan + Socratic Gate"
+
+  v0.65.0/08-developer-guide/verification-team.md:
+    docs:
+      - path: .claude/skills/verification-team/
+
+  v0.65.0/08-developer-guide/contributing.md:
+    docs:
+      - path: CLAUDE.md
+
+  v0.65.0/08-developer-guide/testing.md:
+    docs:
+      - path: CLAUDE.md
+        section: "Quality Gates"
+
+  # ==================================================================
+  # 09-operations
+  # ==================================================================
+  v0.65.0/09-operations/slack-gateway.md:
+    code:
+      - path: core/server/
+
+  v0.65.0/09-operations/debugging.md:
+    docs:
+      - path: .claude/skills/agent-ops-debugging/
+
+  v0.65.0/09-operations/faq.md: {}
+
+  v0.65.0/09-operations/troubleshooting.md: {}
+
+  v0.65.0/09-operations/env-vars.md:
+    code:
+      - path: core/config/
+
+  # ==================================================================
+  # 99-reference
+  # ==================================================================
+  v0.65.0/99-reference/changelog.md:
+    docs:
+      - path: CHANGELOG.md
+
+  v0.65.0/99-reference/version-policy.md:
+    docs:
+      - path: CLAUDE.md
+        section: "Versioning"
+
+  v0.65.0/99-reference/api-internals.md:
+    code:
+      - path: core/
+
+  v0.65.0/99-reference/glossary.md: {}
