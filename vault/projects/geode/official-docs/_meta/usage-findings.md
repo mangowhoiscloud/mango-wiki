@@ -33,15 +33,20 @@ status: analysis
 
 이 카테고리는 **두 가지 의미가 섞여 있음** — 진짜 미사용 vs LangSmith 측정 갭.
 
-### 측정 갭 (실제로는 활성)
+### 측정 갭 (해결됨)
 
-`outputs.model` 필드가 자주 비어 있음 → provider 자동 매핑 실패. 따라서 다음은 trace=0 으로 보이나 실제로는 활성:
+이전 측정에서 `outputs.output.model` 만 봤기 때문에 provider 매핑 실패가 다수 발생.
 
-- `runtime/llm/providers/anthropic.md` — 거의 모든 호출이 거치는데 model 필드 누락으로 카운트 안 됨
-- `runtime/llm/providers/openai-codex.md` — Plus quota 활성 사용자인데 미카운트
-- `prompt-caching.md`, `prompt-hashing.md` — 모든 LLM 호출에 작용하나 metadata 부재
+**원인**: `core/llm/token_tracker.py:_inject_langsmith` 가 `extra.metrics.model` 위치에 model_id를 넣음. measure_page_usage.py 가 이 위치를 인식 안 했음.
 
-→ **개선 1**: `core/llm/providers/*.py` 의 LangSmith 콜백에서 `model_id`, `provider`, `prompt_hash` 메타데이터 명시 주입 필요.
+**Fix (2026-05-02)**: `_classify_run_to_pages` 에서 model 위치 우선순위 변경:
+1. `run.extra.metrics.model` (token_tracker 주입 — 가장 신뢰)
+2. `run.outputs.output.model` (fallback)
+
+수정 후 결과:
+- `openai-codex.md` trace=12 (이전 0) ← 모든 LLM 호출이 gpt-5.5 (Codex)
+- `anthropic.md` trace=0 → 진짜 미사용 (사용자가 Plus + Codex 위주)
+- `glm.md`, `openai-payg.md` trace=0 → 사용자가 등록 안 함
 
 ### 실제 미사용 / 비활성
 

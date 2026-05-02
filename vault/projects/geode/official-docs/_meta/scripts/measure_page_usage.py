@@ -187,17 +187,23 @@ def _classify_run_to_pages(run, mapping: dict) -> list[Path]:
                         if tool_name.startswith(pfx):
                             pages.append(Path(page))
                             break
-        # 모델 ID → provider page
+
+    # 모델 ID 위치 우선순위 (raw_output 유무와 무관):
+    #   1) extra.metrics.model (token_tracker가 주입 — 가장 신뢰)
+    #   2) raw_output.model (fallback)
+    metrics = (extra.get("metrics") if isinstance(extra, dict) else {}) or {}
+    model = metrics.get("model")
+    if not model and isinstance(raw_output, dict):
         model = raw_output.get("model")
-        if isinstance(model, str) and model:
-            # heuristic: claude-* → anthropic, gpt-* → openai-*, glm-* → glm
-            ml = model.lower()
-            if ml.startswith("claude"):
-                pages.append(Path("03-runtime/llm/providers/anthropic.md"))
-            elif "codex" in ml or "gpt-5" in ml:
-                pages.append(Path("03-runtime/llm/providers/openai-codex.md"))
-            elif ml.startswith("glm"):
-                pages.append(Path("03-runtime/llm/providers/glm.md"))
+    if isinstance(model, str) and model:
+        # heuristic: claude-* → anthropic, gpt-* / codex → openai-codex, glm-* → glm
+        ml = model.lower()
+        if ml.startswith("claude"):
+            pages.append(Path("03-runtime/llm/providers/anthropic.md"))
+        elif "codex" in ml or "gpt-5" in ml or ml.startswith("gpt"):
+            pages.append(Path("03-runtime/llm/providers/openai-codex.md"))
+        elif ml.startswith("glm"):
+            pages.append(Path("03-runtime/llm/providers/glm.md"))
 
     # 2. run name (exact 또는 prefix)
     if name in mapping.get("exact_tool_name", {}):

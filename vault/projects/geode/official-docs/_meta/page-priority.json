@@ -1,5 +1,5 @@
 {
-  "computed_at": "2026-05-02T12:37:07.590960Z",
+  "computed_at": "2026-05-02T13:54:19.703516Z",
   "weights": {
     "trace_hits": 0.6,
     "git_commits": 0.3,
@@ -41,12 +41,28 @@
       "rank": 4
     },
     {
+      "path": "v0.65.0/03-runtime/llm/providers/anthropic.md",
+      "priority": 0.411,
+      "trace_hits_30d": 16,
+      "git_commits_30d": 2,
+      "cross_link_count": 3,
+      "rank": 5
+    },
+    {
       "path": "v0.65.0/04-harness/cli/manage-login.md",
       "priority": 0.406,
       "trace_hits_30d": 1,
       "git_commits_30d": 2,
       "cross_link_count": 20,
-      "rank": 5
+      "rank": 6
+    },
+    {
+      "path": "v0.65.0/03-runtime/llm/providers/openai-codex.md",
+      "priority": 0.392,
+      "trace_hits_30d": 12,
+      "git_commits_30d": 2,
+      "cross_link_count": 4,
+      "rank": 7
     },
     {
       "path": "v0.65.0/04-harness/lifecycle.md",
@@ -54,7 +70,7 @@
       "trace_hits_30d": 3,
       "git_commits_30d": 2,
       "cross_link_count": 5,
-      "rank": 6
+      "rank": 8
     },
     {
       "path": "v0.65.0/05-verification/guardrails-g1-g4.md",
@@ -62,7 +78,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 8,
-      "rank": 7
+      "rank": 9
     },
     {
       "path": "v0.65.0/06-plugins/game-ip/pipeline.md",
@@ -70,7 +86,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 8,
-      "rank": 8
+      "rank": 10
     },
     {
       "path": "v0.65.0/03-runtime/auth/overview.md",
@@ -78,7 +94,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 7,
-      "rank": 9
+      "rank": 11
     },
     {
       "path": "v0.65.0/04-harness/cli/overview.md",
@@ -86,7 +102,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 7,
-      "rank": 10
+      "rank": 12
     },
     {
       "path": "v0.65.0/04-harness/hooks/overview.md",
@@ -94,7 +110,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 7,
-      "rank": 11
+      "rank": 13
     },
     {
       "path": "v0.65.0/06-plugins/overview.md",
@@ -102,7 +118,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 7,
-      "rank": 12
+      "rank": 14
     },
     {
       "path": "v0.65.0/08-developer-guide/testing.md",
@@ -110,7 +126,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 7,
-      "rank": 13
+      "rank": 15
     },
     {
       "path": "v0.65.0/03-runtime/auth/credential-semantics.md",
@@ -118,7 +134,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 6,
-      "rank": 14
+      "rank": 16
     },
     {
       "path": "v0.65.0/03-runtime/auth/oauth-flow.md",
@@ -126,7 +142,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 6,
-      "rank": 15
+      "rank": 17
     },
     {
       "path": "v0.65.0/03-runtime/auth/plan-registry.md",
@@ -134,7 +150,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 6,
-      "rank": 16
+      "rank": 18
     },
     {
       "path": "v0.65.0/04-harness/safety/approval.md",
@@ -142,7 +158,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 6,
-      "rank": 17
+      "rank": 19
     },
     {
       "path": "v0.65.0/08-developer-guide/workflow.md",
@@ -150,7 +166,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 6,
-      "rank": 18
+      "rank": 20
     },
     {
       "path": "v0.65.0/09-operations/debugging.md",
@@ -158,7 +174,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 6,
-      "rank": 19
+      "rank": 21
     },
     {
       "path": "v0.65.0/03-runtime/orchestration.md",
@@ -166,7 +182,7 @@
       "trace_hits_30d": 3,
       "git_commits_30d": 2,
       "cross_link_count": 2,
-      "rank": 20
+      "rank": 22
     },
     {
       "path": "v0.65.0/03-runtime/memory/5-tier-context.md",
@@ -174,7 +190,7 @@
       "trace_hits_30d": 1,
       "git_commits_30d": 2,
       "cross_link_count": 4,
-      "rank": 21
+      "rank": 23
     },
     {
       "path": "v0.65.0/02-architecture/4-layer-stack.md",
@@ -182,7 +198,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 5,
-      "rank": 22
+      "rank": 24
     },
     {
       "path": "v0.65.0/03-runtime/llm/prompt-caching.md",
@@ -190,7 +206,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 5,
-      "rank": 23
+      "rank": 25
     },
     {
       "path": "v0.65.0/03-runtime/llm/providers/fallback-rotation.md",
@@ -198,7 +214,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 5,
-      "rank": 24
+      "rank": 26
     },
     {
       "path": "v0.65.0/05-verification/decision-tree.md",
@@ -206,7 +222,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 5,
-      "rank": 25
+      "rank": 27
     },
     {
       "path": "v0.65.0/06-plugins/building-a-plugin.md",
@@ -214,7 +230,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 5,
-      "rank": 26
+      "rank": 28
     },
     {
       "path": "v0.65.0/06-plugins/domain-port-protocol.md",
@@ -222,7 +238,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 5,
-      "rank": 27
+      "rank": 29
     },
     {
       "path": "v0.65.0/08-developer-guide/verification-team.md",
@@ -230,7 +246,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 5,
-      "rank": 28
+      "rank": 30
     },
     {
       "path": "v0.65.0/09-operations/env-vars.md",
@@ -238,15 +254,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 5,
-      "rank": 29
-    },
-    {
-      "path": "v0.65.0/03-runtime/llm/providers/openai-codex.md",
-      "priority": 0.32,
-      "trace_hits_30d": 0,
-      "git_commits_30d": 2,
-      "cross_link_count": 4,
-      "rank": 30
+      "rank": 31
     },
     {
       "path": "v0.65.0/03-runtime/memory/breadcrumb.md",
@@ -254,7 +262,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 4,
-      "rank": 31
+      "rank": 32
     },
     {
       "path": "v0.65.0/03-runtime/tools/mcp.md",
@@ -262,7 +270,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 4,
-      "rank": 32
+      "rank": 33
     },
     {
       "path": "v0.65.0/04-harness/hooks/58-events.md",
@@ -270,7 +278,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 4,
-      "rank": 33
+      "rank": 34
     },
     {
       "path": "v0.65.0/04-harness/safety/policy-chain.md",
@@ -278,7 +286,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 4,
-      "rank": 34
+      "rank": 35
     },
     {
       "path": "v0.65.0/05-verification/biasbuster.md",
@@ -286,7 +294,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 4,
-      "rank": 35
+      "rank": 36
     },
     {
       "path": "v0.65.0/06-plugins/game-ip/psm-scoring.md",
@@ -294,7 +302,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 4,
-      "rank": 36
+      "rank": 37
     },
     {
       "path": "v0.65.0/08-developer-guide/socratic-gate.md",
@@ -302,7 +310,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 4,
-      "rank": 37
+      "rank": 38
     },
     {
       "path": "v0.65.0/03-runtime/memory/vault.md",
@@ -310,7 +318,7 @@
       "trace_hits_30d": 2,
       "git_commits_30d": 2,
       "cross_link_count": 1,
-      "rank": 38
+      "rank": 39
     },
     {
       "path": "v0.65.0/00-overview/frontier-comparison.md",
@@ -318,7 +326,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 3,
-      "rank": 39
+      "rank": 40
     },
     {
       "path": "v0.65.0/01-getting-started/first-analysis.md",
@@ -326,7 +334,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 3,
-      "rank": 40
+      "rank": 41
     },
     {
       "path": "v0.65.0/01-getting-started/installation.md",
@@ -334,7 +342,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 3,
-      "rank": 41
+      "rank": 42
     },
     {
       "path": "v0.65.0/01-getting-started/quickstart.md",
@@ -342,7 +350,7 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 3,
-      "rank": 42
+      "rank": 43
     },
     {
       "path": "v0.65.0/02-architecture/thin-cli-vs-serve.md",
@@ -350,18 +358,10 @@
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
       "cross_link_count": 3,
-      "rank": 43
-    },
-    {
-      "path": "v0.65.0/03-runtime/llm/prompt-hashing.md",
-      "priority": 0.315,
-      "trace_hits_30d": 0,
-      "git_commits_30d": 2,
-      "cross_link_count": 3,
       "rank": 44
     },
     {
-      "path": "v0.65.0/03-runtime/llm/providers/anthropic.md",
+      "path": "v0.65.0/03-runtime/llm/prompt-hashing.md",
       "priority": 0.315,
       "trace_hits_30d": 0,
       "git_commits_30d": 2,
