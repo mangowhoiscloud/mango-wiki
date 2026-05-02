@@ -50,6 +50,27 @@ def _get_openai_client():
 
 `resolve_routing` 의 equivalence class에서 `openai-codex` (SUBSCRIPTION) → `openai` (PAYG) 순서로 fallback. ChatGPT Plus quota 소진/cooldown 시 자동 PAYG.
 
+## Quick Activation
+
+ChatGPT Plus quota 소진 또는 Plus 미가입 시 표준 OpenAI API key fallback.
+
+```bash
+# 1. OpenAI API key 발급 (https://platform.openai.com/api-keys)
+# 2. 등록
+export OPENAI_API_KEY=sk-xxxx
+# 또는
+geode /login set-key openai sk-xxxx
+
+# 3. 검증
+geode "summarize: ..."
+```
+
+`resolve_routing` 동치류:
+- 1순위: openai-codex (ChatGPT Plus, OAUTH_BORROWED)
+- 2순위: openai (PAYG)
+
+Plus quota cooldown 진입 시 자동 PAYG.
+
 ## 다음
 
 - [[openai-codex]] — Codex provider

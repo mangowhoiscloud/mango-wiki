@@ -83,6 +83,29 @@ class CrossLLMResult:
 
 `flagged_axes` 가 비어있지 않으면 final_score에 신뢰도 페널티 적용 (또는 사용자 노출).
 
+## Quick Activation
+
+같은 IP를 두 LLM으로 분석해 일관성 비교. 신뢰도 표시 + flagged_axes 식별.
+
+```bash
+# 1. 단발 — flag 추가
+geode analyze "Cowboy Bebop" --cross-verify
+
+# 2. 영구 활성화 — config.toml
+[verification]
+cross_verify_enabled = true
+agreement_threshold = 0.67
+```
+
+Primary 모델은 active 모델, secondary는 자동 선정 (다른 family — Claude면 Codex, Codex면 Claude). 비용은 ~2배 늘어남.
+
+결과 해석:
+- agreement ≥ 0.80 — 강한 일치, 신뢰
+- 0.67 ~ 0.80 — acceptable
+- < 0.67 — disagreement axes 사용자 노출, final_score 신뢰도 페널티
+
+high-stakes 분석 (의사결정용 IP 평가) 또는 calibration 사이클에서 권장.
+
 ## 다음
 
 - [[guardrails-g1-g4]] — verification 게이트 G4 와 연계

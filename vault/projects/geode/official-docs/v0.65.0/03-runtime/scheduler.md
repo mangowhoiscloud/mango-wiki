@@ -111,6 +111,32 @@ scheduler.schedule_cron(
 - `/task` 슬래시 명령 — 직접 등록
 - 스케줄러 자체는 serve daemon 안에서 별도 thread
 
+## Quick Activation
+
+```bash
+# 1. AT — 특정 시간 1회
+geode "schedule '집 나갈 시간' at 2026-05-03 09:00"
+
+# 2. EVERY — 일정 간격 반복
+geode "every 1 hour check email inbox during 9am-6pm KST weekdays"
+
+# 3. CRON — 표준 cron expression
+geode "cron '0 9 * * 1' weekly retrospective"
+
+# 4. 등록 확인
+geode /task list
+
+# 5. 직접 등록 (LLM 없이)
+geode /task add at 'tomorrow 9am' 'morning standup'
+```
+
+각 job 은 `~/.geode/scheduler/schedules.json` 에 atomic write. active hours quiet window 적용. recovery_policy 기본 `fire_now` (재시작 시 누락 분 즉시 실행).
+
+스케줄 ID로 개별 cancel:
+```bash
+geode /task cancel <job-id>
+```
+
 ## 다음
 
 - [[automation]] — L4.5 자동화

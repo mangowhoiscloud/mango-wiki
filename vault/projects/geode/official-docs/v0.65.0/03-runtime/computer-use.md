@@ -87,6 +87,30 @@ from PIL import Image  # 리사이즈 + 인코딩
 - **스크린 lock 시 자동 unlock 안 함**
 - **OS 다이얼로그/permission popup**: macOS Accessibility / Screen Recording 권한 요청 시 사용자 수동
 
+## Quick Activation
+
+Mac/Linux 데스크톱을 LLM이 마우스/키보드/스크린샷으로 조작.
+
+```bash
+# 1. 의존성 설치 (uv sync 시 이미 됨)
+#    pyautogui + Pillow
+
+# 2. macOS 권한 부여 (system-prompt 시 안내)
+#    System Settings → Privacy & Security:
+#      - Accessibility: 터미널/IDE 추가
+#      - Screen Recording: 같음
+
+# 3. 호출 — DANGEROUS tool 이라 매번 명시 승인
+geode "open Safari and search for 'GEODE LangGraph'"
+# → LLM 이 computer tool call 시도 → ApprovalWorkflow 트리거
+# → y 입력으로 승인
+```
+
+Risk:
+- 의도치 않은 클릭/타이핑 → 사전 승인 필수
+- Headless 환경 미지원 (display 필요)
+- 사용 금지하려면: `.geode/profile_policy.toml` 의 `[deny] tools = ["computer"]`
+
 ## 다음
 
 - [[safety-tiers]] — DANGEROUS_TOOLS
