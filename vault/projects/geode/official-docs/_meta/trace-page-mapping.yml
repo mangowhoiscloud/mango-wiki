@@ -1,0 +1,105 @@
+# LangSmith trace metadata → wiki page mapping.
+#
+# trace 의 tool_calls / run_name / pipeline_node 등을 키로 매칭하여
+# 어느 페이지의 *실제 사용* 신호로 환산.
+#
+# 매칭 우선순위 (위에서 아래로):
+#   1. exact_tool_name
+#   2. run_name_prefix
+#   3. pipeline_node
+#   4. provider_in_metadata
+
+geode_version: 0.65.0
+
+# === Exact tool name → page ===
+# 트레이스의 tool_calls[].name 정확 매칭.
+exact_tool_name:
+  manage_login: 04-harness/cli/manage-login.md
+  memory_save: 03-runtime/memory/5-tier-context.md
+  memory_search: 03-runtime/memory/5-tier-context.md
+  note_save: 03-runtime/memory/vault.md
+  note_read: 03-runtime/memory/vault.md
+  schedule_job: 03-runtime/scheduler.md
+  trigger_event: 04-harness/hooks/overview.md
+  rate_result: 03-runtime/automation.md
+  accept_result: 03-runtime/automation.md
+  reject_result: 03-runtime/automation.md
+  install_mcp_server: 03-runtime/tools/mcp.md
+  analyze_ip: 06-plugins/game-ip/pipeline.md
+  compare_ips: 06-plugins/game-ip/pipeline.md
+  search_ips: 06-plugins/overview.md
+  list_ips: 06-plugins/overview.md
+  batch_analyze: 06-plugins/game-ip/pipeline.md
+  generate_report: 06-plugins/game-ip/psm-scoring.md
+  web_fetch: 03-runtime/tools/protocol.md
+  general_web_search: 03-runtime/tools/protocol.md
+  read_document: 03-runtime/tools/protocol.md
+  switch_model: 03-runtime/llm/providers/fallback-rotation.md
+  set_api_key: 03-runtime/auth/credential-semantics.md
+  manage_auth: 03-runtime/auth/overview.md
+  profile_show: 03-runtime/auth/overview.md
+  profile_update: 03-runtime/auth/overview.md
+  profile_preference: 03-runtime/memory/vault.md
+  profile_learn: 03-runtime/memory/vault.md
+  show_help: 04-harness/cli/overview.md
+  check_status: 04-harness/lifecycle.md
+  manage_rule: 03-runtime/memory/5-tier-context.md
+  create_plan: 03-runtime/orchestration.md
+  approve_plan: 03-runtime/orchestration.md
+  reject_plan: 03-runtime/orchestration.md
+  modify_plan: 03-runtime/orchestration.md
+  list_plans: 03-runtime/orchestration.md
+  rerun_node: 06-plugins/game-ip/pipeline.md
+  generate_data: 03-runtime/automation.md
+  computer: 03-runtime/computer-use.md
+  run_bash: 03-runtime/tools/safety-tiers.md
+  send_email: 03-runtime/tools/protocol.md
+  glob_files: 03-runtime/tools/protocol.md
+  grep_files: 03-runtime/tools/protocol.md
+  write_file: 03-runtime/tools/safety-tiers.md
+  delegate_task: 03-runtime/orchestration.md
+  search_jobs: 03-runtime/tools/protocol.md
+  search_people: 03-runtime/tools/protocol.md
+  get_person_profile: 03-runtime/tools/protocol.md
+  search_companies: 03-runtime/tools/protocol.md
+  get_company_profile: 03-runtime/tools/protocol.md
+
+# MCP tool prefix
+tool_prefix:
+  mcp__: 03-runtime/tools/mcp.md
+
+# === Run name prefix → page ===
+# trace.name 시작 prefix 로 분기.
+run_name_prefix:
+  "anthropic:": 03-runtime/llm/providers/anthropic.md
+  "openai-codex:": 03-runtime/llm/providers/openai-codex.md
+  "openai:": 03-runtime/llm/providers/openai-payg.md
+  "glm:": 03-runtime/llm/providers/glm.md
+  "node:router": 06-plugins/game-ip/pipeline.md
+  "node:signals": 06-plugins/game-ip/pipeline.md
+  "node:analyst": 06-plugins/game-ip/analysts-evaluators.md
+  "node:evaluator": 06-plugins/game-ip/analysts-evaluators.md
+  "node:scoring": 06-plugins/game-ip/psm-scoring.md
+  "node:verification": 05-verification/guardrails-g1-g4.md
+  "node:synthesizer": 05-verification/decision-tree.md
+  "sub_agent:": 04-harness/cli/overview.md
+  "tool:": 03-runtime/tools/protocol.md
+
+# === Metadata field → page ===
+# trace.extra.metadata 의 특정 키/값 매칭.
+metadata_match:
+  - key: pipeline_mode
+    value: dry_run
+    page: 01-getting-started/first-analysis.md
+  - key: cross_verify_enabled
+    value: "true"
+    page: 05-verification/cross-llm.md
+  - key: cache_hit
+    value: "true"
+    page: 03-runtime/llm/prompt-caching.md
+
+# === Project name → context ===
+# LangSmith project 이름. .env의 LANGCHAIN_PROJECT 와 일치해야 함.
+# 실제 사용 중: geode (단일 — dev/prod 분리 없음)
+projects:
+  - geode
