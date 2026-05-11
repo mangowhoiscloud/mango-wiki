@@ -34,6 +34,7 @@ Version: v0.48.0 | Python 3.12+ | 215 modules | 3939+ tests | 48 hooks | 56 tool
 - [[geode-llm-models]] — 3-provider fallback chain (9 models)
 - [[geode-tool-routing]] — AgenticLoop autonomous tool selection
 - [[geode-quality-evaluation]] — 5-Layer verification (Game IP)
+- [[geode-petri-alignment-audit]] — Petri × GEODE alignment audit PoC (v0.92.0+, 8 seeds, audit-mode)
 - [[geode-scaffold-production]] — Scaffold production system (CANNOT/CAN, 8-Step, CI Ratchet)
 - [[geode-unified-scaffold]] — Hook-Driven State Machine enforcement
 

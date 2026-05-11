@@ -23,11 +23,20 @@ title: Wiki Index
 - [[bagelcode-frontier-orchestration-2026]] — 2026-05 frontier 사료 11종 (Anthropic / Cognition / Magentic-One / AutoGen 0.4 / LangGraph / ALAS / ICML resilience / CP-WBFT / MAR / Claude Code SDK / Codex)
 - [[bagelcode-caching-frontier-2026]] — 캐싱·효율 사료 12종 3-tier (provider docs + APC + Hierarchical + KVCOMM + ACON + cautionary)
 - [[bagelcode-xml-frontier-2026]] — XML in LLM 사료 10종 (Anthropic XML 권장 + Claude Code 패턴 + grammar-constrained + TAG + format-restriction 경고)
+- [[bagelcode-production-cases-2026]] — 2026 production cases 사료 12종 (Anthropic Trends + Lanham 'What Survived' + Cursor Composer 2 + Devin/Windsurf + RAPS + gamestudio-subagents + Meta/Exa cases + MIT decision theory)
+- [[bagelcode-mobile-game-tech-2026]] — LLM × 모바일 게임 사례 + 도구·스펙 13종 (Lovable mobile 2026-04 + Phaser 94% LLM 첫시도 + Unity AI 2026 + Godot 4.6 + WebGPU + Coding Leaderboard). 결정: Phaser 3.80 + single-file HTML5
+- [[bagelcode-stack-and-genre-2026]] — 베이글코드 stack 확정 + 유사 장르 + 한국 경쟁사 사료 15종 (신작팀 Unity 명시 + Royal Match Unity $1.44B + 더블유게임즈/팍시 AI 1인3주 + Pitchcraft 위치 = Unity 의 전 단계)
+- [[bagelcode-claude-codex-unity-2026]] — Claude Code/Codex × Unity 사례 14종 + 우리 결정 framing 강화 (BigDevSoon 10일 Steam + Unity MCP 4종 + Bezi 10× + MDPI 한계). 결정 = production-ready 인지하면서 의도적 회피, layer 분리 framing.
+- [[bagelcode-naming-crumb]] — 프로젝트명 **Crumb** 확정 (Bagel motif + breadcrumb pattern + transcript trail = 3중 의미)
+- [[bagelcode-observability-frontier-2026]] — Frontier observability 사료 15종 (Anthropic Managed Agents 2026-04-08 + Google Vertex Unified Trace + AgentOps + OpenTelemetry GenAI Semantic Conventions = 2026 표준)
+- [[bagelcode-frontier-rationale-5-claims]] — 4-actor 결정의 5 frontier 근거 분해 + TradingAgents §4 정합 매핑 (학술 prior + 운영 layer 5개 추가)
+- [[bagelcode-final-design-2026]] — Crumb 최종 설계 (Lead-Specialists + Socratic + CourtEval + 28 kind + envelope/handoff + OTel alias)
 - [[bagelcode-transcripts-schema]] — Agent transcripts 스키마 (JSONL append-only, 18 kind, 5 actor)
 - [[bagelcode-caching-strategy]] — Anthropic ephemeral cache + sandwich 경계 + 토큰 예산
 - [[bagelcode-rubric-scoring]] — 5차원 × 5점 + 토큰 효율 + anti-deception 룰
 - [[bagelcode-orchestration-topology]] — Hub-Ledger-Spoke (PDCA 폐기 → hierarchical hybrid)
 - [[bagelcode-fault-tolerance-design]] — F1-F5 실패 분류 × 복구 primitive (연결부/통신/에이전트)
+- [[bagelcode-budget-guardrails]] — 검수→래칫 폭주 방지 3축 (횟수/time/cost) — 현재 5 / 미구현 8 / P0 4 추천
 - [[bagelcode-team-profile]] — 신작팀 페르소나 + 평가 우선순위
 - [[bagelcode-kiki-leverage]] — Kiki/AppMaker 자산 활용 매핑
 - [[bagelcode-paperclip-vs-alternatives]] — Paperclip vs Swarm/AutoGen/CrewAI 비교 (자체 구현 권장)
@@ -52,6 +61,7 @@ title: Wiki Index
 - [[geode-llm-models]] — 4 providers × 14 models (Anthropic + OpenAI PAYG + Codex + GLM), depth=1 fail-fast, opus-4-7 / gpt-5.5 / glm-5.1
 - [[geode-tool-routing]] — AgenticLoop autonomous tool selection
 - [[geode-quality-evaluation]] — 5-Layer verification (Game IP)
+- [[geode-petri-alignment-audit]] — Petri × GEODE alignment audit PoC (Meridian Labs Petri 3, inspect_ai, 8 seeds, audit-mode)
 - [[geode-hook-production-gap]] — Hook system production GAP analysis (49 events, P0-P3 gaps)
 - [[geode-scaffold-production]] — Claude Code 기반 8-step 스캐폴드 (CANNOT/CAN, CI Ratchet, GitFlow)
 - [[geode-unified-scaffold]] — Hook-Driven State Machine 통합 워크플로우 enforcement
